@@ -15,6 +15,9 @@
 //机型
 #define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
+//屏幕比例
+#define kSCREEN_6 ([AppMagagerSingle shareManager].screenScaleFor6)
+
 //输出类名 方法名的log
 #ifdef DEBUG
 #define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);

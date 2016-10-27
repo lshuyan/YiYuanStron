@@ -8,24 +8,24 @@
 
 #pragma mark - Other
 
-static NSString * const AppStoreLink    = @"i";
+static NSString * const AppStoreLink    = @"";
 
 #if DEBUG
 
-#define APIShareDomain @"http:/m/"
-#define WebURLFeedback @"http://m="
+#define APIShareDomain @""
+#define WebURLFeedback @""
 
-static NSString *APIBaseDomain          = @"http:///";
-static NSString *APIBaseGroup           = @"http://%@";
+static NSString *APIBaseDomain          = @"";
+static NSString *APIBaseGroup           = @"";
 static NSString *APIBaseShare           = APIShareDomain;
 
 #else
 
-#define APIShareDomain @"htt/"
-#define WebURLFeedback @"httId="
+#define APIShareDomain @""
+#define WebURLFeedback @""
 
-static NSString *APIBaseDomain          = @"httm/v3/";
-static NSString *APIBaseGroup           = @"http@";
+static NSString *APIBaseDomain          = @"";
+static NSString *APIBaseGroup           = @"";
 static NSString *APIBaseShare           = APIShareDomain;
 
 

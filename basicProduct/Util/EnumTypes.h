@@ -12,21 +12,21 @@
 #pragma mark - 支付
 
 typedef NS_ENUM(NSInteger, PayType) {
-    PayTypeiPay                 = 1,                                   //支付包
-    PayTypeWechatPay              = 2,                                //微信
-    PayTypeAppIDPay               = 4,                                //应用内支付
+    PayTypeiPay                                 = 1,                                   //支付包
+    PayTypeWechatPay                      = 2,                                //微信
+    PayTypeAppIDPay                        = 4,                                //应用内支付
 };
 
 typedef NS_ENUM(NSInteger, LoginType) {
-    LoginTypeNone                   = 0,                                //未登录
-    LoginTypeNorm                 = 1,                                //注册登录
-    LoginTypeQQ                     = 2,                                //QQ登录
-    LoginTypeWeiXin                 = 3                                 //微信登录
+    LoginTypeNone                             = 0,                                //未登录
+    LoginTypeNorm                             = 1,                                //注册登录
+    LoginTypeQQ                                = 2,                                //QQ登录
+    LoginTypeWeiXin                          = 3                                 //微信登录
 };
 typedef NS_ENUM(NSInteger, VipType) {
-    VipTypeNone = 3,
-    VipTypeVip = 1,
-    VipTypeVipExpired = 2
+    VipTypeNone                                 = 3,
+    VipTypeVip                                    = 1,
+    VipTypeVipExpired                        = 2
 };
 
 ///-----

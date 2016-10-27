@@ -12,5 +12,6 @@ target 'basicProduct' do
     #pod 'Fabric'
     #pod 'Crashlytics'
     pod 'Masonry'
-    pod 'Bugtags'
+#    pod 'Bugtags'
+    pod 'Bugly'
 end
