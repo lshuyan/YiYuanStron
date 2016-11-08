@@ -9,13 +9,14 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
 //库
 #import <Masonry/Masonry.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+//#import <JSONModel/JSONModel.h>
 
 //self
-#import "AppMagagerSingle.h"
-
+#import "AppMagagerSingle.h"            //app 管理单例
+#import "EnumTypes.h"                       //枚举
+#import "Constants.h"                          //常量
+#import "Macros.h"                              //宏
 #endif /* PrefixHeader_pch */
