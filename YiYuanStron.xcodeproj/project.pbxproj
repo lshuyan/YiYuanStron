@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1C6200D313E7647ABB0D355E /* libPods-YiYuanStron.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C067514819BF7BDF354F875 /* libPods-YiYuanStron.a */; };
+		6B037E601DD2CF4B0063300C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B037E5F1DD2CF4B0063300C /* RootViewController.m */; };
+		6B037E631DD3096C0063300C /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B037E621DD3096C0063300C /* MainNavigationController.m */; };
 		6B28FB5E1DC8297C00AC4CC4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FB5D1DC8297C00AC4CC4 /* MainViewController.m */; };
-		6B28FB641DC82FB800AC4CC4 /* MianTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FB631DC82FB800AC4CC4 /* MianTabBarController.m */; };
+		6B28FB641DC82FB800AC4CC4 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FB631DC82FB800AC4CC4 /* MainTabBarController.m */; };
 		6B6F0FA21DC1984C00B80339 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA11DC1984C00B80339 /* LoginViewController.m */; };
 		6B6F0FA51DC1986B00B80339 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA41DC1986B00B80339 /* BasicViewController.m */; };
 		6B6F0FA91DC19C7A00B80339 /* UIView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA81DC19C7A00B80339 /* UIView+Animations.m */; };
@@ -28,10 +30,14 @@
 /* Begin PBXFileReference section */
 		2ABB790F2848138110D9C2DC /* Pods-YiYuanStron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiYuanStron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YiYuanStron/Pods-YiYuanStron.debug.xcconfig"; sourceTree = "<group>"; };
 		694CD81C55C1DC0C7E2A335F /* Pods-YiYuanStron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiYuanStron.release.xcconfig"; path = "Pods/Target Support Files/Pods-YiYuanStron/Pods-YiYuanStron.release.xcconfig"; sourceTree = "<group>"; };
+		6B037E5E1DD2CF4B0063300C /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		6B037E5F1DD2CF4B0063300C /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		6B037E611DD3096C0063300C /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		6B037E621DD3096C0063300C /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		6B28FB5C1DC8297C00AC4CC4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		6B28FB5D1DC8297C00AC4CC4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		6B28FB621DC82FB800AC4CC4 /* MianTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MianTabBarController.h; sourceTree = "<group>"; };
-		6B28FB631DC82FB800AC4CC4 /* MianTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MianTabBarController.m; sourceTree = "<group>"; };
+		6B28FB621DC82FB800AC4CC4 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		6B28FB631DC82FB800AC4CC4 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		6B6F0FA01DC1984C00B80339 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		6B6F0FA11DC1984C00B80339 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6B6F0FA31DC1986B00B80339 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
@@ -86,12 +92,16 @@
 		6B28FB5B1DC8274E00AC4CC4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				6B28FB621DC82FB800AC4CC4 /* MianTabBarController.h */,
-				6B28FB631DC82FB800AC4CC4 /* MianTabBarController.m */,
+				6B037E611DD3096C0063300C /* MainNavigationController.h */,
+				6B037E621DD3096C0063300C /* MainNavigationController.m */,
+				6B28FB621DC82FB800AC4CC4 /* MainTabBarController.h */,
+				6B28FB631DC82FB800AC4CC4 /* MainTabBarController.m */,
 				6B28FB5C1DC8297C00AC4CC4 /* MainViewController.h */,
 				6B28FB5D1DC8297C00AC4CC4 /* MainViewController.m */,
 				6B8724241DD1D6B2009F55AA /* LeftViewController.h */,
 				6B8724251DD1D6B2009F55AA /* LeftViewController.m */,
+				6B037E5E1DD2CF4B0063300C /* RootViewController.h */,
+				6B037E5F1DD2CF4B0063300C /* RootViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -369,12 +379,14 @@
 				6B9E4F8D1DD17C4C0033FC52 /* UIColor+Extern.m in Sources */,
 				6B6F0FA51DC1986B00B80339 /* BasicViewController.m in Sources */,
 				6B6F0FAC1DC1A04600B80339 /* AppMagagerSingle.m in Sources */,
+				6B037E631DD3096C0063300C /* MainNavigationController.m in Sources */,
 				C7392C681DAE36B600A52D09 /* main.m in Sources */,
 				6B28FB5E1DC8297C00AC4CC4 /* MainViewController.m in Sources */,
 				6B6F0FA91DC19C7A00B80339 /* UIView+Animations.m in Sources */,
 				6BDE03D51DC86DE80020B051 /* BannerItemModel.m in Sources */,
-				6B28FB641DC82FB800AC4CC4 /* MianTabBarController.m in Sources */,
+				6B28FB641DC82FB800AC4CC4 /* MainTabBarController.m in Sources */,
 				6B8724261DD1D6B2009F55AA /* LeftViewController.m in Sources */,
+				6B037E601DD2CF4B0063300C /* RootViewController.m in Sources */,
 				6B6F0FA21DC1984C00B80339 /* LoginViewController.m in Sources */,
 				6BDE03D21DC841B90020B051 /* BannerScrollView.m in Sources */,
 			);
@@ -426,7 +438,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 144;
+				CURRENT_PROJECT_VERSION = 183;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -476,7 +488,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 144;
+				CURRENT_PROJECT_VERSION = 183;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

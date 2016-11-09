@@ -250,7 +250,6 @@
 {
     if (!_pageControl) {
         _pageControl = [[UIPageControl alloc] init];
-        _pageControl.backgroundColor = [UIColor blackColor];
     }
     return _pageControl;
 }

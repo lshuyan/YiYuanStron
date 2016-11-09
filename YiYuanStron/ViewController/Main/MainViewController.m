@@ -19,7 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];    
+//    UIBarButtonItem *itme = [[UIBarButtonItem alloc] initWithTitle:@"左边" style:UIBarButtonItemStyleDone target:self action:@selector(onTouchLeftItme)];
+//    self.navigationController.navigationItem.leftBarButtonItem = itme;
+    
     [self addBannerScrollView];
 }
 
@@ -46,7 +48,11 @@
             [arr addObject:model];
         }
         [_bannerScrollView makeForItemModels:arr callBackBlock:^(BannerItemModel *model) {
-            NSLog(@"  %@", model);
+            UIViewController *controller = [[UIViewController alloc] init];
+            controller.view.backgroundColor = [UIColor orangeColor];
+//            controller.view.clipsToBounds=YES;
+            [self.navigationController pushViewController:controller animated:YES];
+            
         }];
     }
     return _bannerScrollView;

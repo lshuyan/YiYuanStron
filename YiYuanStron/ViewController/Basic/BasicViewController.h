@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainNavigationController.h"
 
 @interface BasicViewController : UIViewController
 
+@property (nonatomic, strong)MainNavigationController                         *mainNavController;
 
+//设置为导航的rootview;
+- (void)setNavigtion;
 @end

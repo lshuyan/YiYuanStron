@@ -6,8 +6,8 @@
 //  Copyright © 2016年 huyan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BasicViewController.h"
 
-@interface LeftViewController : UIViewController
+@interface LeftViewController : BasicViewController
 
 @end

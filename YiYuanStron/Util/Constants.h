@@ -7,8 +7,8 @@
 //
 
 #pragma mark - Other
-
-static NSString * const AppStoreLink    = @"";
+static NSString * const kAppTitle    = @"易源商城";
+static NSString * const kAppStoreLink    = @"";
 
 #if DEBUG
 
