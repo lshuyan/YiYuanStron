@@ -29,7 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-basicProduct.xcscheme</key>
+		<key>Pods-YiYuanStron.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,7 +52,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>44CDEED5FD6D8EC2707B5435C5AB09B2</key>
+		<key>21F16FA6413F088C76D3B4C0045F3ABD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65475CCE864E8B46ACDB87B4D8BA80D6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>70BC44266C6FFE30D2C57129458E070B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>90C034B1B5EC5725057A8A335828975C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C747645536DF51DF672E1B5E6E708AA0</key>
+		<key>A1AD105F2818CC31BE7FFA6F733E70CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D464816A565D338798323959CC4F0ED8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEE58BD3D42D7C9CA41E6445CB1064B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
