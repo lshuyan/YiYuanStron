@@ -6,10 +6,10 @@
 //  Copyright © 2016年 huyan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BasicViewController.h"
 #import "hyWebView.h"
 
-@interface WebViewController : UIViewController
+@interface WebViewController : BasicViewController
 
 @property (nonatomic, strong)hyWebView  *webView;
 

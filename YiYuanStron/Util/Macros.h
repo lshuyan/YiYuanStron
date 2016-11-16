@@ -11,9 +11,18 @@
 
 //颜色
 #define COLOR(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f]
+#define COLOR_STRING(string) [UIColor colorWithHexString:string]
+    //该应用专用主色调
+#define COLOR_G [UIColor colorWithHexString:@"9ac153"] //绿
+#define COLOR_Y [UIColor colorWithHexString:@"f8b62b"] //黄
+#define COLOR_O [UIColor colorWithHexString:@"f39800"] //橘
+#define COLOR_B [UIColor colorWithHexString:@"231815"] //黑
+
 
 //机型
 #define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//机型是否小于6
+#define isIphoneLess_6 ([UIScreen mainScreen].bounds.size.height < 667)
 
 //屏幕比例
 #define kSCREEN_6 ([AppMagagerSingle shareManager].screenScaleFor6)

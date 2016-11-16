@@ -20,8 +20,8 @@
 #define kTextLeftContinue @"继续后拉后退"
 #define kTextLeftRelease @"松开后退"
 
-#define kTextLeftContinueBackHome @"继续右拉回到首页"
-#define kTextLeftReleaseBackHome @"松开回到首页"
+#define kTextLeftContinueBackHome @"继续右拉返回"
+#define kTextLeftReleaseBackHome @"松开返回"
 
 #define kTextRightContinue @"继续左拉前进"
 #define kTextRightRelease @"松开前进"
@@ -372,11 +372,6 @@ typedef NS_ENUM(NSInteger, CustomPanDirection) {
     }
 }
 
-- (void)panGesture:(UIPanGestureRecognizer *)panGesture
-{
-
-}
-
 - (void)updateProgress:(CGFloat)progress
 {
     if (progress == 0.0) {
@@ -477,7 +472,9 @@ typedef NS_ENUM(NSInteger, CustomPanDirection) {
 {
     if (_isFindInPageMode) return;
     
-    [_delegate scrollViewDidScroll:scrollView];
+    if ([_delegate respondsToSelector:@selector(scrollView)]) {
+        [_delegate scrollViewDidScroll:scrollView];
+    }
     CGPoint pt = [scrollView.panGestureRecognizer translationInView:scrollView];
     if (pt.x==0) {
         // y轴方向移动
@@ -670,12 +667,13 @@ typedef NS_ENUM(NSInteger, CustomPanDirection) {
                 [_delegate webPage:self didUpdateLink:[self link]];
         }
     }
-    
+
     return YES;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+    
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView

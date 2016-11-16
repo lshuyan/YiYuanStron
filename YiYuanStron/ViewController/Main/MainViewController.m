@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "BannerScrollView.h"
 #import "MenuScrollView.h"
+#import "WebViewController.h"
 
 @interface MainViewController ()
 
@@ -62,7 +63,7 @@
             [arr addObject:model];
         }
         [_bannerScrollView makeForItemModels:arr callBackBlock:^(BannerItemModel *model) {
-            BasicViewController *controller = [[BasicViewController alloc] init];
+            WebViewController *controller = [[WebViewController alloc] init];
             controller.view.backgroundColor = [UIColor orangeColor];
             [controller addNavBackItme];
 //            controller.view.clipsToBounds=YES;

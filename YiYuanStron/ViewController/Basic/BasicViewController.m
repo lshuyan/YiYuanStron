@@ -33,8 +33,23 @@
 {
     @weakify(self)
     [self addNavLeftItmeForTitle:@"返回" block:^(id x) {
-        [self_weak_.navigationController popViewControllerAnimated:YES];
+        [self_weak_ backToViewController];
     }];
+}
+
+- (void)backToViewController
+{
+    NSArray *viewcontrollers=self.navigationController.viewControllers;
+    if (viewcontrollers.count>1) {
+        if ([viewcontrollers objectAtIndex:viewcontrollers.count-1]==self) {
+            //push方式
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+    else{
+        //present方式
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)addNavLeftItmeForTitle:(NSString *)title block:(void(^)(id x))block

@@ -22,4 +22,5 @@
 - (void)addNavBackItme;
 - (void)addNavLeftItmeForTitle:(NSString *)title block:(void(^)(id x))block;
 
+- (void)backToViewController;
 @end

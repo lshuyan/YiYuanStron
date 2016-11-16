@@ -13,6 +13,6 @@ target 'YiYuanStron' do
     #pod 'Crashlytics'
     pod 'Masonry' #约束
     #pod 'Bugtags'
-    pod 'Bugly' #奔溃报告
+    #pod 'Bugly' #奔溃报告
     pod 'NJKWebViewProgress' #webView进度条
 end

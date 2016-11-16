@@ -8,7 +8,7 @@
 
 #import "WebViewController.h"
 
-@interface WebViewController ()
+@interface WebViewController ()<hyWebViewDelegate>
 
 @end
 
@@ -27,13 +27,24 @@
     [super viewDidLoad];
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.equalTo(@0);
+        make.left.right.bottom.equalTo(@0);
+        make.top.equalTo(@0);
     }];
+    self.webView.delegate = self;
+    [self.webView load:@"http://www.baidu.com"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+
+#pragma mark ------------- delegate
+- (void)webPageWillEndDragBackHome:(hyWebView *)webPage
+{
+    [self backToViewController];
+}
+
 
 
 

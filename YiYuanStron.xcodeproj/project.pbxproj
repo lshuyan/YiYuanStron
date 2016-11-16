@@ -31,10 +31,10 @@
 		6BA012B01DD45B6300173536 /* MenuItmeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA012AF1DD45B6300173536 /* MenuItmeModel.m */; };
 		6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D11DC841B90020B051 /* BannerItemModel.m */; };
 		6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D41DC86DE80020B051 /* BannerScrollView.m */; };
+		6BF1E5261DDC66340038A10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF1E5251DDC66340038A10B /* Images.xcassets */; };
 		C7392C681DAE36B600A52D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C671DAE36B600A52D09 /* main.m */; };
 		C7392C6B1DAE36B600A52D09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C6A1DAE36B600A52D09 /* AppDelegate.m */; };
 		C7392C711DAE36B600A52D09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7392C6F1DAE36B600A52D09 /* Main.storyboard */; };
-		C7392C731DAE36B600A52D09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7392C721DAE36B600A52D09 /* Assets.xcassets */; };
 		C7392C761DAE36B600A52D09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7392C741DAE36B600A52D09 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -87,13 +87,13 @@
 		6BDE03D11DC841B90020B051 /* BannerItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BannerItemModel.m; path = YiYuanStron/View/BannerScroll/BannerItemModel.m; sourceTree = SOURCE_ROOT; };
 		6BDE03D31DC86DE80020B051 /* BannerItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerItemModel.h; sourceTree = "<group>"; };
 		6BDE03D41DC86DE80020B051 /* BannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerScrollView.m; sourceTree = "<group>"; };
+		6BF1E5251DDC66340038A10B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C067514819BF7BDF354F875 /* libPods-YiYuanStron.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YiYuanStron.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7392C631DAE36B600A52D09 /* YiYuanStron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiYuanStron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7392C671DAE36B600A52D09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C7392C691DAE36B600A52D09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C7392C6A1DAE36B600A52D09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C7392C701DAE36B600A52D09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C7392C721DAE36B600A52D09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7392C751DAE36B600A52D09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7392C771DAE36B600A52D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7BAC5771DAF1478003D4590 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -297,8 +297,8 @@
 				C7392C691DAE36B600A52D09 /* AppDelegate.h */,
 				C7392C6A1DAE36B600A52D09 /* AppDelegate.m */,
 				C7392C6F1DAE36B600A52D09 /* Main.storyboard */,
-				C7392C721DAE36B600A52D09 /* Assets.xcassets */,
 				C7392C741DAE36B600A52D09 /* LaunchScreen.storyboard */,
+				6BF1E5251DDC66340038A10B /* Images.xcassets */,
 				C7392C661DAE36B600A52D09 /* Supporting Files */,
 			);
 			path = YiYuanStron;
@@ -396,8 +396,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF1E5261DDC66340038A10B /* Images.xcassets in Resources */,
 				C7392C761DAE36B600A52D09 /* LaunchScreen.storyboard in Resources */,
-				C7392C731DAE36B600A52D09 /* Assets.xcassets in Resources */,
 				C7392C711DAE36B600A52D09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,7 +544,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 382;
+				CURRENT_PROJECT_VERSION = 440;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -594,7 +594,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 382;
+				CURRENT_PROJECT_VERSION = 440;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -618,7 +618,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2ABB790F2848138110D9C2DC /* Pods-YiYuanStron.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = DV3CMC9R83;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YiYuanStron/PrefixHeader.pch";
 				INFOPLIST_FILE = YiYuanStron/Info.plist;
@@ -633,7 +633,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 694CD81C55C1DC0C7E2A335F /* Pods-YiYuanStron.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = DV3CMC9R83;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YiYuanStron/PrefixHeader.pch";
 				INFOPLIST_FILE = YiYuanStron/Info.plist;

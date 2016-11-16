@@ -6,8 +6,7 @@
 //  Copyright © 2016年 huyan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface LoginViewController : UIViewController
+#import "BasicViewController.h"
+@interface LoginViewController : BasicViewController
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "LeftViewController.h"
+#import "WebViewController.h"
+#import "LoginViewController.h"
 
 static NSString *kLeftViewControllerCellIdentifier = @"LeftViewControllerCellIdentifier";
 
@@ -22,8 +24,7 @@ static NSString *kLeftViewControllerCellIdentifier = @"LeftViewControllerCellIde
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.navigationController setNavigationBarHidden:YES];
-    self.arrDataSouce =  [NSMutableArray arrayWithArray:@[@"百度",@"apple"]];
+    self.arrDataSouce =  [NSMutableArray arrayWithArray:@[@"百度",@"登录"]];
 
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -74,11 +75,42 @@ static NSString *kLeftViewControllerCellIdentifier = @"LeftViewControllerCellIde
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    BasicViewController *controller = [[BasicViewController alloc] init];
-    controller.view.backgroundColor = [UIColor orangeColor];
-    [controller mainNavController];
-    [controller addNavBackItme];
-    //            controller.view.clipsToBounds=YES;
-    [self presentViewController:controller animated:YES completion:nil];
+
+    switch (indexPath.row) {
+        case 0://baidu
+        {
+            WebViewController *controller = [[WebViewController alloc] init];
+            controller.view.backgroundColor = [UIColor orangeColor];
+            [controller setNavigtion];
+            [controller addNavBackItme];
+            [self presentViewController:controller.mainNavController animated:YES completion:nil];
+        }
+             break;
+        case 1://登录
+        {
+            LoginViewController *controller = [[LoginViewController alloc] init];
+            [controller setNavigtion];
+            [controller addNavBackItme];
+            [self presentViewController:controller.mainNavController animated:YES completion:nil];
+        }
+             break;
+        case 2:
+        {
+
+            
+        }
+            break;
+        case 3:
+        {
+
+            
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+    
 }
 @end
