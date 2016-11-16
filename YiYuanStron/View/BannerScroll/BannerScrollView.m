@@ -39,10 +39,13 @@
 
 - (void)makeForModel:(BannerItemModel *)model block:(VoidBlock_id)block
 {
+    //里面有操作可变数组 , 保险起见在主线程走
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.block = block;
         self.model = model;
         self.button.backgroundColor = [UIColor colorWithHexString:self.model.bannerImg];
-
+    });
+    
 }
 
 - (void)initUI
@@ -61,8 +64,6 @@
         @weakify(self)
         _button.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
             self_weak_.block(self_weak_.model);
-           NSLog(@"%@ ",  self_weak_.model.bannerImg);
-            
             return [RACSignal empty];
         }];
     }
@@ -71,7 +72,7 @@
 
 @end
 
-#pragma  mark ----------------------- scroll---------------------------
+#pragma  mark ----------------------- BannerScrollView---------------------------
 
 @interface BannerScrollView () <UIScrollViewDelegate>
 
@@ -79,10 +80,10 @@
 @property(nonatomic, copy) NSArray                 *arrSrcModel; //源model
 @property(nonatomic, copy) NSMutableArray     *arrTargerModel; //使用的arr
 @property(nonatomic, copy) NSMutableArray     *arrTargerItme; //使用的arr
+@property (nonatomic, strong)NSTimer               *timer;
 
 @property(nonatomic, strong) UIPageControl      *pageControl;
 @property(nonatomic, strong) UIScrollView         *mainScrollView;
-
 @end
 
 @implementation BannerScrollView
@@ -96,6 +97,12 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
 - (void)makeForItemModels:(NSArray *)arr callBackBlock:(VoidBlock_id)block
 {
     self.block = block;
@@ -104,17 +111,14 @@
 
 - (void)initUI
 {
-    self.backgroundColor = [UIColor blueColor];
     [self addSubview:self.mainScrollView];
     [self addSubview:self.pageControl];
     
     [self.mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.equalTo(@0);
     }];
-    self.mainScrollView.backgroundColor  = [ UIColor greenColor];
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.centerX.equalTo(@0);
-//        make.height.equalTo()
     }];
 }
 
@@ -127,6 +131,7 @@
     [self createBannerItem];
     [self makeItmes];
     [self makePageControl];
+    [self makeTime]; //开启定时
     
     [self.mainScrollView layoutIfNeeded];
     if (_arrSrcModel.count == 1) {
@@ -145,6 +150,10 @@
 //添加itme
 - (void)createBannerItem
 {
+    //模拟无限循环
+    // 假如有   A B C  页面
+    //实际  C A B C A  这样放置.
+    
     [self.arrTargerModel removeAllObjects];
     if (self.arrSrcModel.count == 1) {
         [self.arrTargerModel addObjectsFromArray:self.arrSrcModel];
@@ -157,24 +166,25 @@
         //这里需要一个显示没有信息的图片.
         model.bannerImg = @"";
     }
-    
-    if (self.arrTargerModel.count > self.arrTargerItme.count) {
-        NSInteger count = self.arrTargerModel.count - self.arrTargerItme.count;
-        for (NSInteger i = self.arrTargerItme.count ; i< count ; i++) {
-            BannerItem *itme = [[BannerItem alloc] init];
-            [self.arrTargerItme addObject:itme];
-            [self.mainScrollView addSubview:itme];
-            itme.backgroundColor = [UIColor orangeColor];
-            [itme mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.height.equalTo(self);
-                make.width.equalTo(@(kSCREEN_WIGHT));
-                make.left.equalTo(self.mainScrollView.mas_left).offset(i*kSCREEN_WIGHT);
-                if (i == (self.arrTargerModel.count -1)) {
-                    make.right.equalTo(self.mainScrollView.mas_right);
-                }
-            }];
-        }
+    for (BannerItem *itme in self.arrTargerItme) {
+        [itme removeFromSuperview];
     }
+    [self.arrTargerItme removeAllObjects];
+    
+    for (NSInteger i = 0 ; i< self.arrTargerModel.count ; i++) {
+        BannerItem *itme = [[BannerItem alloc] init];
+        [self.arrTargerItme addObject:itme];
+        [self.mainScrollView addSubview:itme];
+        [itme mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.height.equalTo(self);
+            make.width.equalTo(@(kSCREEN_WIGHT));
+            make.left.equalTo(self.mainScrollView.mas_left).offset(i*kSCREEN_WIGHT);
+            if (i == (self.arrTargerModel.count -1)) {
+                make.right.equalTo(self.mainScrollView.mas_right);
+            }
+        }];
+    }
+    
 }
 
 - (void)makeItmes
@@ -196,6 +206,20 @@
     self.mainScrollView.contentOffset = CGPointMake(kSCREEN_WIGHT, 0);
 }
 
+- (void)makeTime
+{
+    [self.timer invalidate];
+    self.timer = nil;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(nextBanner) userInfo:nil repeats:YES];
+//    [self.timer fire];
+}
+
+- (void)nextBanner
+{
+    NSInteger x = (NSInteger)(self.mainScrollView.contentOffset.x)%(NSInteger)(kSCREEN_WIGHT) + self.mainScrollView.contentOffset.x;
+    [self.mainScrollView setContentOffset:CGPointMake(x + kSCREEN_WIGHT, 0) animated:YES];
+}
+
 #pragma mark ------------- 代理
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -214,15 +238,11 @@
     }else {
         self.pageControl.currentPage = page-1;
     }
-    NSLog(@"%f  |||  %ld", offsetX, page);
+//    NSLog(@"%f  |||  %ld", offsetX, page);
 
-    if (offsetX <= 0
-//        kSCREEN_WIGHT*.5
-        ) {
+    if (offsetX <= 0) {
         [scrollView setContentOffset:CGPointMake((maxWight - kSCREEN_WIGHT*2), 0) animated:NO];
-    } else if (offsetX >= maxWight - kSCREEN_WIGHT
-//               maxWight - kSCREEN_WIGHT*1.5
-               ) {
+    } else if (offsetX >= maxWight - kSCREEN_WIGHT) {
         [scrollView setContentOffset:CGPointMake(kSCREEN_WIGHT, 0) animated:NO];
     }
 
@@ -259,12 +279,22 @@
     if (!_mainScrollView) {
         _mainScrollView = [[UIScrollView alloc] init];
         _mainScrollView.pagingEnabled = YES;
-        _mainScrollView.backgroundColor = [UIColor clearColor];
         _mainScrollView.delegate = self;
         _mainScrollView.showsHorizontalScrollIndicator = NO;
         _mainScrollView.showsVerticalScrollIndicator = NO;
     }
     return  _mainScrollView;
+}
+
+#pragma mark ------------- 重写
+
+/// 事件传递
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    if ([self pointInside:point withEvent:event]) {
+        //重新开启
+        [self makeTime];
+    }
+    return [super hitTest:point withEvent:event];
 }
 
 @end

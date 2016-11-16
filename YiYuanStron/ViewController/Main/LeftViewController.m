@@ -8,7 +8,13 @@
 
 #import "LeftViewController.h"
 
-@interface LeftViewController ()
+static NSString *kLeftViewControllerCellIdentifier = @"LeftViewControllerCellIdentifier";
+
+@interface LeftViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property(nonatomic, copy)NSMutableArray              *arrDataSouce;
+
+@property(nonatomic, strong)UITableView                 *tableView;
 
 @end
 
@@ -16,22 +22,63 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+//    [self.navigationController setNavigationBarHidden:YES];
+    self.arrDataSouce =  [NSMutableArray arrayWithArray:@[@"百度",@"apple"]];
+
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.equalTo(@0);
+        make.top.equalTo(@200);
+        make.width.equalTo(self.view).multipliedBy(0.8);
+    }];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark ------------- set get
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIGHT, kSCREEN_HEIGHT) style:UITableViewStyleGrouped];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kLeftViewControllerCellIdentifier];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+    }
+    return _tableView;
 }
-*/
 
+#pragma mark ------------- tableView
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.arrDataSouce.count;
+}
+//
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLeftViewControllerCellIdentifier];
+    cell.textLabel.text = self.arrDataSouce[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BasicViewController *controller = [[BasicViewController alloc] init];
+    controller.view.backgroundColor = [UIColor orangeColor];
+    [controller mainNavController];
+    [controller addNavBackItme];
+    //            controller.view.clipsToBounds=YES;
+    [self presentViewController:controller animated:YES completion:nil];
+}
 @end

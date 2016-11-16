@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NJKWebViewProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-YiYuanStron.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21F16FA6413F088C76D3B4C0045F3ABD</key>
+		<key>090E99E598A09E58B7DF4E89C0425CD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>414530DC31E26115BF4613B91064A493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4489BE0E4617A4E0CD498D95DC7EBA09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52788BF5E6E7EFC73567B64092D2B887</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,17 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A1AD105F2818CC31BE7FFA6F733E70CB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D464816A565D338798323959CC4F0ED8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DEE58BD3D42D7C9CA41E6445CB1064B0</key>
+		<key>B4A3E08D49931371F7247521A50EAF79</key>
 		<dict>
 			<key>primary</key>
 			<true/>

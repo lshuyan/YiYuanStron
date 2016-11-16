@@ -8,10 +8,12 @@
 
 #import "MainViewController.h"
 #import "BannerScrollView.h"
+#import "MenuScrollView.h"
 
 @interface MainViewController ()
 
-@property (nonatomic, strong) BannerScrollView *bannerScrollView;
+@property (nonatomic, strong) BannerScrollView      *bannerScrollView;
+@property (nonatomic, strong) MenuScrollView        *menuScrollVIew;
 
 @end
 
@@ -19,9 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    UIBarButtonItem *itme = [[UIBarButtonItem alloc] initWithTitle:@"左边" style:UIBarButtonItemStyleDone target:self action:@selector(onTouchLeftItme)];
-//    self.navigationController.navigationItem.leftBarButtonItem = itme;
+    self.title = kAppTitle;
     
+    [self addMenuScorllView];
     [self addBannerScrollView];
 }
 
@@ -33,10 +35,22 @@
 {
     [self.view addSubview:self.bannerScrollView];
     [self.bannerScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.equalTo(@0);
+        make.left.right.equalTo(@0);
+        make.top.equalTo(@44);
         make.height.equalTo(@200);
     }];
 }
+
+- (void)addMenuScorllView
+{
+    [self.view addSubview:self.menuScrollVIew];
+    [self.menuScrollVIew mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(@0);
+        make.height.equalTo(@44);
+    }];
+}
+
+#pragma mark -------------  set get
 
 - (BannerScrollView *)bannerScrollView
 {
@@ -48,8 +62,9 @@
             [arr addObject:model];
         }
         [_bannerScrollView makeForItemModels:arr callBackBlock:^(BannerItemModel *model) {
-            UIViewController *controller = [[UIViewController alloc] init];
+            BasicViewController *controller = [[BasicViewController alloc] init];
             controller.view.backgroundColor = [UIColor orangeColor];
+            [controller addNavBackItme];
 //            controller.view.clipsToBounds=YES;
             [self.navigationController pushViewController:controller animated:YES];
             
@@ -57,4 +72,28 @@
     }
     return _bannerScrollView;
 }
+
+- (MenuScrollView *)menuScrollVIew
+{
+    if (!_menuScrollVIew) {
+        _menuScrollVIew = [[MenuScrollView alloc] init];
+        NSArray *arr = @[@"点点滴都滴1", @"江诗丹顿1", @"江诗顿1", @"丹顿1", @"江诗丹顿1", @"江诗丹顿1", @"1江诗丹顿"];
+//        NSArray *arr2= @[@"点点滴都滴", @"江诗丹顿", @"江诗顿", @"丹顿"];
+//        NSArray *arr2 = @[@"点点滴都滴", @"江诗丹顿"];
+
+        NSMutableArray *arrModel =[[NSMutableArray alloc] initWithCapacity:2];
+        for (int i = 0; i < arr.count; i++) {
+            MenuItmeModel *model = [[MenuItmeModel alloc] init];
+            model.title = arr[i];
+            [arrModel addObject:model];
+        }
+        [_menuScrollVIew makeForItemModels:arrModel callBackBlock:^(MenuItmeModel *model) {
+            NSLog(@"%@ --------------------",  model.title);
+            
+        }];
+        
+    }
+    return _menuScrollVIew;
+}
+
 @end

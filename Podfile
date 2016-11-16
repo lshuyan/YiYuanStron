@@ -2,16 +2,17 @@
 # platform :ios, '8.3'
 
 target 'YiYuanStron' do
-    pod 'SDWebImage'
-    pod 'AFNetworking'
-    pod 'JSONModel'
-    pod 'MJRefresh'
-    pod 'SVProgressHUD'
-    pod 'FMDB'
-    pod 'ReactiveCocoa','~> 2.5'
+    pod 'SDWebImage' #网络图片
+    pod 'AFNetworking' #网络
+    pod 'JSONModel' #模型转换
+    pod 'MJRefresh' #上下拉刷新
+    pod 'SVProgressHUD' #提示框
+    pod 'FMDB' #数据库
+    pod 'ReactiveCocoa','~> 2.5' #链式编程
     #pod 'Fabric'
     #pod 'Crashlytics'
-    pod 'Masonry'
-#    pod 'Bugtags'
-    pod 'Bugly'
+    pod 'Masonry' #约束
+    #pod 'Bugtags'
+    pod 'Bugly' #奔溃报告
+    pod 'NJKWebViewProgress' #webView进度条
 end

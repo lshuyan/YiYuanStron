@@ -7,15 +7,15 @@
 //
 
 #import "RootViewController.h"
-#import "MainTabBarController.h"
+#import "MainViewController.h"
 #import "LeftViewController.h"
 #import "MainNavigationController.h"
 
 @interface RootViewController ()
 
 @property (nonatomic, strong)LeftViewController                           *leftViewController;
-@property (nonatomic, strong)MainTabBarController                      *mainController;
-@property (nonatomic, strong)MainNavigationController                 *mainNvaController;
+@property (nonatomic, strong)MainViewController                          *mainController;
+//@property (nonatomic, strong)MainNavigationController                 *mainNvaController;
 
 @property (nonatomic, strong)UIControl                                          *mainMarkConntrol;
 
@@ -31,21 +31,22 @@
 - (void)addChildController
 {
     self.leftViewController = [[LeftViewController alloc] init];
-    self.mainController = [[MainTabBarController alloc] init];
-    [self addChildViewController:self.mainNvaController];
-    [self.view addSubview:self.mainNvaController.view];
-    self.mainNvaController.view.frame = self.view.frame;
+    self.leftViewController.navigationController.view.frame = CGRectMake(0, 0, kSCREEN_WIGHT*[AppMagagerSingle shareManager].mainContollerLeftScale, kSCREEN_HEIGHT);
+    self.mainController = [[MainViewController alloc] init];
+    [self.mainController setNavigtion];
+    
+    @weakify(self)
+    [self.mainController addNavLeftItmeForTitle:@"左边" block:^(id x) {
+        [self_weak_ showLeftViewController];
+    }];
+    
+    [self addChildViewController:self.mainController.navigationController];
+    [self.view addSubview:self.mainController.navigationController.view];
+    self.mainController.navigationController.view.frame = self.view.frame;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-#pragma mark ------------- 事件
-
-- (void)onTouchLeftItme
-{
-    [self showLeftViewController];
 }
 
 #pragma mark ------------- 自定义方法
@@ -54,39 +55,30 @@
 {
     [self addChildViewController:self.leftViewController];
     [self.view insertSubview:self.leftViewController.view atIndex:0];
+    [self.mainController.navigationController.view addSubview:self.mainMarkConntrol];
     
-    [self.mainNvaController.view addSubview:self.mainMarkConntrol];
-     [UIView animateWithDuration:.2 animations:^{
-        CGPoint point = self.mainNvaController.view.center;
-        point.x += kSCREEN_WIGHT*.8;
-        self.mainNvaController.view.center = point;
-    }];
+    [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        CGPoint point = self.mainController.navigationController.view.center;
+        point.x += kSCREEN_WIGHT*[AppMagagerSingle shareManager].mainContollerLeftScale;
+        self.mainController.navigationController.view.center = point;
+    } completion:nil];
 }
 
 - (void)showMainController
 {
     [self.leftViewController willMoveToParentViewController:nil];
     [self.mainMarkConntrol removeFromSuperview];
-    [UIView animateWithDuration:.2 animations:^{
-        CGPoint point = self.mainNvaController.view.center;
+    
+    [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        CGPoint point = self.mainController.navigationController.view.center;
         point.x = kSCREEN_WIGHT*.5;
-        self.mainNvaController.view.center = point;
+        self.mainController.navigationController.view.center = point;
     } completion:^(BOOL finished) {
         [self.leftViewController removeFromParentViewController];
     }];
 }
 
 #pragma mark ------------- set get
-
-- (MainNavigationController *)mainNvaController
-{
-    if (!_mainNvaController) {
-        _mainNvaController = [[MainNavigationController alloc] initWithRootViewController:self.mainController];
-        UIBarButtonItem *itme = [[UIBarButtonItem alloc] initWithTitle:@"左边" style:UIBarButtonItemStyleDone target:self action:@selector(onTouchLeftItme)];
-        self.mainController.navigationItem.leftBarButtonItem = itme;
-    }
-    return _mainNvaController;
-}
 
 - (UIControl *)mainMarkConntrol
 {
@@ -95,9 +87,7 @@
         @weakify(self)
         [[_mainMarkConntrol rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             [self_weak_ showMainController];
-        }];
-//        _mainMarkConntrol.rac_command;
-        
+        }];        
     }
     return _mainMarkConntrol;
 }

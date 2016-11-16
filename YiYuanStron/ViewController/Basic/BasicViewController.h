@@ -15,4 +15,11 @@
 
 //设置为导航的rootview;
 - (void)setNavigtion;
+
+/**
+ *    增加返回按钮
+ **/
+- (void)addNavBackItme;
+- (void)addNavLeftItmeForTitle:(NSString *)title block:(void(^)(id x))block;
+
 @end

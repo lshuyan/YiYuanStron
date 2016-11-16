@@ -29,6 +29,7 @@
 - (void)initMagager
 {
     self.screenScaleFor6 = [UIScreen mainScreen].bounds.size.width/375;
+    self.mainContollerLeftScale = 0.8;
 }
 
 @end

@@ -10,16 +10,27 @@
 		1C6200D313E7647ABB0D355E /* libPods-YiYuanStron.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C067514819BF7BDF354F875 /* libPods-YiYuanStron.a */; };
 		6B037E601DD2CF4B0063300C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B037E5F1DD2CF4B0063300C /* RootViewController.m */; };
 		6B037E631DD3096C0063300C /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B037E621DD3096C0063300C /* MainNavigationController.m */; };
+		6B1704C91DDAFFFF00C2775B /* UIWebViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704C81DDAFFFF00C2775B /* UIWebViewAdditions.m */; };
+		6B1704D11DDB009B00C2775B /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704CC1DDB009B00C2775B /* MDRadialProgressLabel.m */; };
+		6B1704D21DDB009B00C2775B /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704CE1DDB009B00C2775B /* MDRadialProgressTheme.m */; };
+		6B1704D31DDB009B00C2775B /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704D01DDB009B00C2775B /* MDRadialProgressView.m */; };
+		6B1704D61DDB017600C2775B /* UIView+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704D51DDB017600C2775B /* UIView+Ex.m */; };
+		6B1704D91DDB0B5400C2775B /* UIImage+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704D81DDB0B5400C2775B /* UIImage+Ex.m */; };
+		6B1704DC1DDB0C0100C2775B /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704DB1DDB0C0100C2775B /* UIColor+Expanded.m */; };
+		6B1704DF1DDB0EBE00C2775B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704DE1DDB0EBE00C2775B /* WebViewController.m */; };
 		6B28FB5E1DC8297C00AC4CC4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FB5D1DC8297C00AC4CC4 /* MainViewController.m */; };
 		6B28FB641DC82FB800AC4CC4 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FB631DC82FB800AC4CC4 /* MainTabBarController.m */; };
+		6B504B451DDAB9C100E39F2A /* hyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B504B441DDAB9C100E39F2A /* hyWebView.m */; };
 		6B6F0FA21DC1984C00B80339 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA11DC1984C00B80339 /* LoginViewController.m */; };
 		6B6F0FA51DC1986B00B80339 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA41DC1986B00B80339 /* BasicViewController.m */; };
 		6B6F0FA91DC19C7A00B80339 /* UIView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA81DC19C7A00B80339 /* UIView+Animations.m */; };
 		6B6F0FAC1DC1A04600B80339 /* AppMagagerSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FAB1DC1A04600B80339 /* AppMagagerSingle.m */; };
 		6B8724261DD1D6B2009F55AA /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8724251DD1D6B2009F55AA /* LeftViewController.m */; };
 		6B9E4F8D1DD17C4C0033FC52 /* UIColor+Extern.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E4F8C1DD17C4C0033FC52 /* UIColor+Extern.m */; };
-		6BDE03D21DC841B90020B051 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D11DC841B90020B051 /* BannerScrollView.m */; };
-		6BDE03D51DC86DE80020B051 /* BannerItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D41DC86DE80020B051 /* BannerItemModel.m */; };
+		6BA012AD1DD4430C00173536 /* MenuScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA012AC1DD4430C00173536 /* MenuScrollView.m */; };
+		6BA012B01DD45B6300173536 /* MenuItmeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA012AF1DD45B6300173536 /* MenuItmeModel.m */; };
+		6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D11DC841B90020B051 /* BannerItemModel.m */; };
+		6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D41DC86DE80020B051 /* BannerScrollView.m */; };
 		C7392C681DAE36B600A52D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C671DAE36B600A52D09 /* main.m */; };
 		C7392C6B1DAE36B600A52D09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C6A1DAE36B600A52D09 /* AppDelegate.m */; };
 		C7392C711DAE36B600A52D09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7392C6F1DAE36B600A52D09 /* Main.storyboard */; };
@@ -34,10 +45,28 @@
 		6B037E5F1DD2CF4B0063300C /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		6B037E611DD3096C0063300C /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		6B037E621DD3096C0063300C /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		6B1704C71DDAFFFF00C2775B /* UIWebViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebViewAdditions.h; sourceTree = "<group>"; };
+		6B1704C81DDAFFFF00C2775B /* UIWebViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWebViewAdditions.m; sourceTree = "<group>"; };
+		6B1704CB1DDB009B00C2775B /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
+		6B1704CC1DDB009B00C2775B /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
+		6B1704CD1DDB009B00C2775B /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
+		6B1704CE1DDB009B00C2775B /* MDRadialProgressTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressTheme.m; sourceTree = "<group>"; };
+		6B1704CF1DDB009B00C2775B /* MDRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressView.h; sourceTree = "<group>"; };
+		6B1704D01DDB009B00C2775B /* MDRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressView.m; sourceTree = "<group>"; };
+		6B1704D41DDB017600C2775B /* UIView+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Ex.h"; sourceTree = "<group>"; };
+		6B1704D51DDB017600C2775B /* UIView+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ex.m"; sourceTree = "<group>"; };
+		6B1704D71DDB0B5400C2775B /* UIImage+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Ex.h"; sourceTree = "<group>"; };
+		6B1704D81DDB0B5400C2775B /* UIImage+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Ex.m"; sourceTree = "<group>"; };
+		6B1704DA1DDB0C0100C2775B /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
+		6B1704DB1DDB0C0100C2775B /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
+		6B1704DD1DDB0EBE00C2775B /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		6B1704DE1DDB0EBE00C2775B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		6B28FB5C1DC8297C00AC4CC4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		6B28FB5D1DC8297C00AC4CC4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		6B28FB621DC82FB800AC4CC4 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		6B28FB631DC82FB800AC4CC4 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		6B504B431DDAB9C100E39F2A /* hyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hyWebView.h; sourceTree = "<group>"; };
+		6B504B441DDAB9C100E39F2A /* hyWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hyWebView.m; sourceTree = "<group>"; };
 		6B6F0FA01DC1984C00B80339 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		6B6F0FA11DC1984C00B80339 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6B6F0FA31DC1986B00B80339 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
@@ -50,10 +79,14 @@
 		6B8724251DD1D6B2009F55AA /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		6B9E4F8B1DD17C4C0033FC52 /* UIColor+Extern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extern.h"; sourceTree = "<group>"; };
 		6B9E4F8C1DD17C4C0033FC52 /* UIColor+Extern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extern.m"; sourceTree = "<group>"; };
-		6BDE03D01DC841B90020B051 /* BannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerScrollView.h; sourceTree = "<group>"; };
-		6BDE03D11DC841B90020B051 /* BannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerScrollView.m; sourceTree = "<group>"; };
+		6BA012AB1DD4430C00173536 /* MenuScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScrollView.h; sourceTree = "<group>"; };
+		6BA012AC1DD4430C00173536 /* MenuScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScrollView.m; sourceTree = "<group>"; };
+		6BA012AE1DD45B6300173536 /* MenuItmeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItmeModel.h; sourceTree = "<group>"; };
+		6BA012AF1DD45B6300173536 /* MenuItmeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItmeModel.m; sourceTree = "<group>"; };
+		6BDE03D01DC841B90020B051 /* BannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BannerScrollView.h; path = YiYuanStron/View/BannerScroll/BannerScrollView.h; sourceTree = SOURCE_ROOT; };
+		6BDE03D11DC841B90020B051 /* BannerItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BannerItemModel.m; path = YiYuanStron/View/BannerScroll/BannerItemModel.m; sourceTree = SOURCE_ROOT; };
 		6BDE03D31DC86DE80020B051 /* BannerItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerItemModel.h; sourceTree = "<group>"; };
-		6BDE03D41DC86DE80020B051 /* BannerItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerItemModel.m; sourceTree = "<group>"; };
+		6BDE03D41DC86DE80020B051 /* BannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerScrollView.m; sourceTree = "<group>"; };
 		8C067514819BF7BDF354F875 /* libPods-YiYuanStron.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YiYuanStron.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7392C631DAE36B600A52D09 /* YiYuanStron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiYuanStron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7392C671DAE36B600A52D09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +122,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6B1704CA1DDB007600C2775B /* webViewUtil */ = {
+			isa = PBXGroup;
+			children = (
+				6B1704CB1DDB009B00C2775B /* MDRadialProgressLabel.h */,
+				6B1704CC1DDB009B00C2775B /* MDRadialProgressLabel.m */,
+				6B1704CD1DDB009B00C2775B /* MDRadialProgressTheme.h */,
+				6B1704CE1DDB009B00C2775B /* MDRadialProgressTheme.m */,
+				6B1704CF1DDB009B00C2775B /* MDRadialProgressView.h */,
+				6B1704D01DDB009B00C2775B /* MDRadialProgressView.m */,
+			);
+			path = webViewUtil;
+			sourceTree = "<group>";
+		};
 		6B28FB5B1DC8274E00AC4CC4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +150,25 @@
 				6B037E5F1DD2CF4B0063300C /* RootViewController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		6B504B411DDAB93F00E39F2A /* web */ = {
+			isa = PBXGroup;
+			children = (
+				6B1704DD1DDB0EBE00C2775B /* WebViewController.h */,
+				6B1704DE1DDB0EBE00C2775B /* WebViewController.m */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
+		6B504B421DDAB97200E39F2A /* webView */ = {
+			isa = PBXGroup;
+			children = (
+				6B1704CA1DDB007600C2775B /* webViewUtil */,
+				6B504B431DDAB9C100E39F2A /* hyWebView.h */,
+				6B504B441DDAB9C100E39F2A /* hyWebView.m */,
+			);
+			path = webView;
 			sourceTree = "<group>";
 		};
 		6B6F0F9E1DC1982C00B80339 /* Basic */ = {
@@ -127,6 +192,14 @@
 		6B6F0FA61DC19C5E00B80339 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				6B1704DA1DDB0C0100C2775B /* UIColor+Expanded.h */,
+				6B1704DB1DDB0C0100C2775B /* UIColor+Expanded.m */,
+				6B1704D71DDB0B5400C2775B /* UIImage+Ex.h */,
+				6B1704D81DDB0B5400C2775B /* UIImage+Ex.m */,
+				6B1704D41DDB017600C2775B /* UIView+Ex.h */,
+				6B1704D51DDB017600C2775B /* UIView+Ex.m */,
+				6B1704C71DDAFFFF00C2775B /* UIWebViewAdditions.h */,
+				6B1704C81DDAFFFF00C2775B /* UIWebViewAdditions.m */,
 				6B6F0FA71DC19C7A00B80339 /* UIView+Animations.h */,
 				6B6F0FA81DC19C7A00B80339 /* UIView+Animations.m */,
 				6B9E4F8B1DD17C4C0033FC52 /* UIColor+Extern.h */,
@@ -135,12 +208,35 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		6BA012A81DD4425600173536 /* BannerScroll */ = {
+			isa = PBXGroup;
+			children = (
+				6BDE03D01DC841B90020B051 /* BannerScrollView.h */,
+				6BDE03D41DC86DE80020B051 /* BannerScrollView.m */,
+				6BDE03D31DC86DE80020B051 /* BannerItemModel.h */,
+				6BDE03D11DC841B90020B051 /* BannerItemModel.m */,
+			);
+			path = BannerScroll;
+			sourceTree = "<group>";
+		};
+		6BA012AA1DD442DF00173536 /* MenuScroll */ = {
+			isa = PBXGroup;
+			children = (
+				6BA012AB1DD4430C00173536 /* MenuScrollView.h */,
+				6BA012AC1DD4430C00173536 /* MenuScrollView.m */,
+				6BA012AE1DD45B6300173536 /* MenuItmeModel.h */,
+				6BA012AF1DD45B6300173536 /* MenuItmeModel.m */,
+			);
+			path = MenuScroll;
+			sourceTree = "<group>";
+		};
 		6BBFFCDE1DC0B65A00431691 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				6B28FB5B1DC8274E00AC4CC4 /* Main */,
 				6B6F0F9E1DC1982C00B80339 /* Basic */,
 				6B6F0F9F1DC1982C00B80339 /* Login */,
+				6B504B411DDAB93F00E39F2A /* web */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -164,10 +260,9 @@
 		6BDE03CF1DC8414C0020B051 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6BDE03D01DC841B90020B051 /* BannerScrollView.h */,
-				6BDE03D11DC841B90020B051 /* BannerScrollView.m */,
-				6BDE03D31DC86DE80020B051 /* BannerItemModel.h */,
-				6BDE03D41DC86DE80020B051 /* BannerItemModel.m */,
+				6B504B421DDAB97200E39F2A /* webView */,
+				6BA012AA1DD442DF00173536 /* MenuScroll */,
+				6BA012A81DD4425600173536 /* BannerScroll */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,20 +470,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B1704D21DDB009B00C2775B /* MDRadialProgressTheme.m in Sources */,
 				C7392C6B1DAE36B600A52D09 /* AppDelegate.m in Sources */,
+				6B504B451DDAB9C100E39F2A /* hyWebView.m in Sources */,
+				6B1704D11DDB009B00C2775B /* MDRadialProgressLabel.m in Sources */,
 				6B9E4F8D1DD17C4C0033FC52 /* UIColor+Extern.m in Sources */,
 				6B6F0FA51DC1986B00B80339 /* BasicViewController.m in Sources */,
+				6B1704DC1DDB0C0100C2775B /* UIColor+Expanded.m in Sources */,
 				6B6F0FAC1DC1A04600B80339 /* AppMagagerSingle.m in Sources */,
 				6B037E631DD3096C0063300C /* MainNavigationController.m in Sources */,
 				C7392C681DAE36B600A52D09 /* main.m in Sources */,
 				6B28FB5E1DC8297C00AC4CC4 /* MainViewController.m in Sources */,
 				6B6F0FA91DC19C7A00B80339 /* UIView+Animations.m in Sources */,
-				6BDE03D51DC86DE80020B051 /* BannerItemModel.m in Sources */,
+				6B1704D91DDB0B5400C2775B /* UIImage+Ex.m in Sources */,
+				6B1704D31DDB009B00C2775B /* MDRadialProgressView.m in Sources */,
+				6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */,
+				6B1704D61DDB017600C2775B /* UIView+Ex.m in Sources */,
 				6B28FB641DC82FB800AC4CC4 /* MainTabBarController.m in Sources */,
+				6B1704C91DDAFFFF00C2775B /* UIWebViewAdditions.m in Sources */,
 				6B8724261DD1D6B2009F55AA /* LeftViewController.m in Sources */,
+				6BA012AD1DD4430C00173536 /* MenuScrollView.m in Sources */,
 				6B037E601DD2CF4B0063300C /* RootViewController.m in Sources */,
+				6B1704DF1DDB0EBE00C2775B /* WebViewController.m in Sources */,
 				6B6F0FA21DC1984C00B80339 /* LoginViewController.m in Sources */,
-				6BDE03D21DC841B90020B051 /* BannerScrollView.m in Sources */,
+				6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */,
+				6BA012B01DD45B6300173536 /* MenuItmeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +544,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 183;
+				CURRENT_PROJECT_VERSION = 382;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -488,7 +594,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 183;
+				CURRENT_PROJECT_VERSION = 382;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

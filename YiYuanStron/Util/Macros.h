@@ -18,6 +18,7 @@
 //屏幕比例
 #define kSCREEN_6 ([AppMagagerSingle shareManager].screenScaleFor6)
 #define kSCREEN_WIGHT ([UIScreen mainScreen].bounds.size.width)
+#define kSCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 
 //输出类名 方法名的log

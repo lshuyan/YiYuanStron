@@ -21,6 +21,11 @@ PODS:
   - JSONModel (1.7.0)
   - Masonry (1.0.2)
   - MJRefresh (3.1.12)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -40,6 +45,7 @@ DEPENDENCIES:
   - JSONModel
   - Masonry
   - MJRefresh
+  - NJKWebViewProgress
   - ReactiveCocoa (~> 2.5)
   - SDWebImage
   - SVProgressHUD
@@ -51,10 +57,11 @@ SPEC CHECKSUMS:
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 316dc3b2b5a02055b3b39f7883ab061fa1a4817d
+PODFILE CHECKSUM: 0a512fd3c29b27ecb6b2b59dabee02656a62fd0c
 
 COCOAPODS: 1.1.1
