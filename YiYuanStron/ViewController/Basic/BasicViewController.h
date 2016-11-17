@@ -20,7 +20,7 @@
  *    增加返回按钮
  **/
 - (void)addNavBackItme;
-- (void)addNavLeftItmeForTitle:(NSString *)title block:(void(^)(id x))block;
+- (void)addNavLeftItmeForTitle:(NSString *)title  image:(NSString *)image block:(void(^)(id x))block;
 
 - (void)backToViewController;
 @end

@@ -8,13 +8,15 @@
 
 #import "LoginViewController.h"
 #import "UIColor+Extern.h"
+#import "UIView+Animations.h"
+#import "LoginTextField.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong)UIView                  *mainView;  // 底
 @property (nonatomic, strong)UIImageView        *backImageView; //底图
-@property (nonatomic, strong)UITextField           *userNameField; //账号
-@property (nonatomic, strong)UITextField           *passwordField; //密码
+@property (nonatomic, strong)LoginTextField      *userNameField; //账号
+@property (nonatomic, strong)LoginTextField      *passwordField; //密码
 @property (nonatomic, strong)UIButton                *injoyButton; //登录
 @property (nonatomic, strong)UIButton                *storeDelegateButton; //协议
 @property (nonatomic, strong)UIView                  *storeDelegateView; //装协议按钮
@@ -22,7 +24,7 @@
 @property (nonatomic, strong)UIButton                *forgetPasswordButton; //忘记密码
 @property (nonatomic, strong)UIView                  *verticalLineView; //竖线
 @property (nonatomic, strong)UIButton                *backButton; //放回
-@property (nonatomic, strong)UILabel                  *errerLabel; //错我提示
+@property (nonatomic, strong)UIButton                  *errerButton; //错我提示
 
 @property (nonatomic, copy)NSString                 *userName; //账号
 @property (nonatomic, copy)NSString                 *password; //密码
@@ -43,6 +45,8 @@
     [self.view addSubview:self.registerButton];
     [self.view addSubview:self.forgetPasswordButton];
     [self.view addSubview:self.verticalLineView];
+    [self.view addSubview:self.errerButton];
+    [self.view addSubview:self.backButton];
 
     [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.bottom.equalTo(@0);
@@ -52,19 +56,19 @@
         make.height.equalTo(@(356*kSCREEN_6));
     }];
     [self.userNameField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(15*kSCREEN_6));
-        make.right.equalTo(@(-15*kSCREEN_6));
+        make.left.equalTo(@(25*kSCREEN_6));
+        make.right.equalTo(@(-25*kSCREEN_6));
         make.height.equalTo(@(34));
         if (isIphoneLess_6) {
-            make.top.equalTo(@(200*kSCREEN_6)); //如果是5或者4的设备, 有遮住输入框的可能, 往上了一点点
+            make.top.equalTo(@(208*kSCREEN_6)); //如果是5或者4的设备, 有遮住输入框的可能, 往上了一点点
         }else
         {
             make.top.equalTo(@(228*kSCREEN_6));
         }
     }];
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(15*kSCREEN_6));
-        make.right.equalTo(@(-15*kSCREEN_6));
+        make.left.equalTo(@(25*kSCREEN_6));
+        make.right.equalTo(@(-25*kSCREEN_6));
         make.height.equalTo(@(34));
         make.top.equalTo(self.userNameField.mas_bottom).offset(18*kSCREEN_6);
     }];
@@ -93,7 +97,15 @@
         make.centerY.equalTo(self.verticalLineView.mas_centerY);
         make.left.equalTo(self.verticalLineView.mas_right).offset(12 * kSCREEN_6);
     }];
-    
+    //错误提示
+    [self.errerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.userNameField.mas_left);
+        make.bottom.equalTo(self.userNameField.mas_top).offset(-10 * kSCREEN_6);
+    }];
+    //返回
+    [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.equalTo(@20);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -114,14 +126,34 @@
 
 #pragma mark ------------- 重写
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.view endEditing:YES];
+    [self.navigationController.view sendSubviewToBack:self.navigationController.navigationBar];
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     [self.view endEditing:YES];
+    [self.view bringSubviewToFront:self.navigationController.navigationBar];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
+}
+
+#pragma mark ------------- 私有事件
+
+/**
+ *    账号密码错误提示文字
+ **/
+- (void)showErrerLabel
+{
+    self.errerButton.hidden = NO;
+    [self.errerButton startTransitionAnimation];
 }
 
 #pragma mark ------------- 点击事件
@@ -132,6 +164,7 @@
 - (void)onClickInjoyButtion
 {
     [self.view endEditing:YES];
+    [self showErrerLabel];
     NSLog(@"onClickInjoyButtion");
 }
 
@@ -189,8 +222,8 @@
 - (UITextField *)userNameField
 {
     if (!_userNameField) {
-        _userNameField = [self createTextField];
-        _userNameField.placeholder = @"  请输入您的手机号/易源账号";
+        _userNameField = [[LoginTextField alloc] init];
+        _userNameField.placeholder = @"请输入您的手机号/易源账号";
         _userNameField.keyboardType = UIKeyboardTypeDefault;
         _userNameField.returnKeyType = UIReturnKeyNext;
     }
@@ -200,8 +233,8 @@
 - (UITextField *)passwordField
 {
     if (!_passwordField) {
-        _passwordField = [self createTextField];
-        _passwordField.placeholder = @"  请输入登录密码";
+        _passwordField = [[LoginTextField alloc] init];
+        _passwordField.placeholder = @"请输入登录密码";
         _passwordField.keyboardType = UIKeyboardTypeDefault;
         _passwordField.returnKeyType = UIReturnKeyJoin;
         _passwordField.secureTextEntry = YES;
@@ -296,49 +329,38 @@
 - (UIView *)verticalLineView
 {
     if (!_verticalLineView) {
-        _verticalLineView = [self createLineView];
+        _verticalLineView = [[UIView alloc] init];
+        _verticalLineView.userInteractionEnabled = NO;
         _verticalLineView.backgroundColor = [UIColor colorWithHexString:@"d8d8d8"];
     }
     return _verticalLineView;
 }
 
-- (UILabel *)errerLabel
+- (UIButton *)errerButton
 {
-    if (!_errerLabel) {
-        
+    if (!_errerButton) {
+        _errerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_errerButton setImage:[UIImage imageNamed:@"login_errer_X.png"] forState:0];
+        [_errerButton setTitle:@"请输入正确的用户名和密码" forState:0];
+        [_errerButton setTitleColor: [UIColor colorWithHexString:@"f32f00"] forState:0];
+        _errerButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        _errerButton.hidden = YES;
+        _errerButton.userInteractionEnabled = NO;
     }
-    return _errerLabel;
+    return _errerButton;
 }
 
-#pragma mark ------------- 辅助创建控件
-//  usernarme   password 用到
-- (UITextField *)createTextField
+- (UIButton *)backButton
 {
-    UITextField *field = [[UITextField alloc] init];
-    field.textColor = [UIColor blackColor];
-    field.font = [UIFont systemFontOfSize:16];
-    field.borderStyle = 0;
-    field.clearButtonMode = UITextFieldViewModeAlways;
-    field.delegate = self;
-    UIView *line = [self createLineView];
-    
-    //灰色线
-    [field addSubview:line];
-    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.equalTo(@0);
-        make.height.equalTo(@2);
-    }];
-    
-    return field;
-}
-
-//输入框下面的横线
-- (UIView *)createLineView
-{
-    UIView *view = [[UIView alloc] init];
-    view.userInteractionEnabled = NO;
-    view.backgroundColor = [UIColor colorWithHexString:@"e1e2e3"];
-    return  view;
+    if (!_backButton) {
+        _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_backButton setImage:[UIImage imageNamed:@"login_back.png"] forState:0];
+        @weakify(self)
+        [[_backButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            [self_weak_ backToViewController];
+        }];
+    }
+    return _backButton;
 }
 
 @end

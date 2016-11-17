@@ -38,6 +38,11 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc
+{
+    NSLog(@"--------");
+}
+
 
 #pragma mark ------------- delegate
 - (void)webPageWillEndDragBackHome:(hyWebView *)webPage

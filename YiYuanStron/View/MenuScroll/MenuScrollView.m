@@ -13,11 +13,14 @@
 @property(nonatomic, copy) VoidBlock_id          block;
 @property(nonatomic, copy) NSArray                 *arrSrcModel; //源model
 @property(nonatomic, copy) NSMutableArray     *arrTargerItme; //使用的arr
+@property(nonatomic, copy) NSMutableArray     *arrpaddingViews; // 用于约束填充
 
 @property(nonatomic, strong) UIView                  *linView;
 @property(nonatomic, strong) UIView                  *paddingView; // 用于约束填充
 @property(nonatomic, strong) UIScrollView         *mainScrollView;
 @property(nonatomic, strong) UIButton                *selectButton; //选中的Bution
+
+@property(nonatomic, assign) BOOL                    isFull;//是否满屏   蛮重要
 
 ///常量
 @property(nonatomic, assign) CGFloat                fontSize;
@@ -74,38 +77,58 @@
 }
 
 #pragma mark  ----------- 逻辑
-
-//添加itme
-- (void)createMenuItem
+- (void)removeAllConstraints
 {
-    // 怕约束冲突, 先全部删除约束
-    for (int i = 0; i < self.arrTargerItme.count; i++) {
-        UIButton *itme = self.arrTargerItme[i];
-        [itme removeFromSuperview];
-    }
-    [self.arrTargerItme removeAllObjects];
-    [self.paddingView removeFromSuperview];
     [self.mainScrollView removeFromSuperview];
     [self addSubview:self.mainScrollView];
     [self.mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.equalTo(@0);
     }];
+    for (int i = 0; i < self.arrTargerItme.count; i++) {
+        UIButton *itme = self.arrTargerItme[i];
+        [itme removeFromSuperview];
+    }
+    for (int i = 0; i < self.arrpaddingViews.count; i++) {
+        UIView *itme = self.arrpaddingViews[i];
+        [itme removeFromSuperview];
+    }
     
-    //如果本来有2子菜单,   下次是8个,  就只创建多的6个
-    for (NSInteger i = 0 ; i< self.arrSrcModel.count  ; i++) {
-        UIButton *itme = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.arrTargerItme addObject:itme];
+}
+
+- (void)addAllSubViews
+{
+    for (int i = 0; i < self.arrTargerItme.count; i++) {
+        UIButton *itme = self.arrTargerItme[i];
+        [self.mainScrollView addSubview:itme];
+    }
+    for (int i = 0; i < self.arrpaddingViews.count; i++) {
+        UIView *itme = self.arrpaddingViews[i];
         [self.mainScrollView addSubview:itme];
     }
 }
 
-- (void)makeItmes
+- (void)removeAllSubViews
 {
-    BOOL isFullSceen = NO;
-    
+    [self.arrTargerItme removeAllObjects];
+    [self.arrpaddingViews removeAllObjects];
+    [self.paddingView removeFromSuperview];
+}
+
+//添加itme
+- (void)createMenuItem
+{
+    self.isFull = YES;
+    [self removeAllConstraints];
+    [self removeAllSubViews];
     @weakify(self)
-    for (int i = 0; i < self.arrSrcModel.count; i++) {
-        UIButton *itme = self.arrTargerItme[i];
+    for (NSInteger i = 0 ; i< self.arrSrcModel.count  ; i++) {
+        UIButton *itme = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIView *view = [self createPaddingView];
+        [self.arrTargerItme addObject:itme];
+        [self.arrpaddingViews addObject:view];
+        [self.mainScrollView addSubview:itme];
+        [self.mainScrollView addSubview:view];
+        
         MenuItmeModel *model = self.arrSrcModel[i];
         [itme setTitle:model.title forState:0];
         [itme.titleLabel setFont:[UIFont systemFontOfSize:self.fontSize]];
@@ -114,7 +137,7 @@
         if (i == 0) {
             self.selectButton = itme;
         }
-
+        
         [[itme rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton  *itme) {
             //回到主线程
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -123,52 +146,69 @@
                 [self_weak_ moveSelectionItme:itme];
             });
         }];
-        
+    }
+    UIView *view = [self createPaddingView];
+    [self.arrpaddingViews addObject:view];
+    [self.mainScrollView addSubview:view];
+}
+
+- (void)makeItmes
+{
+    for (int i = 0; i < self.arrSrcModel.count; i++) {
+        UIButton *itme = self.arrTargerItme[i];
+        UIView *view = self.arrpaddingViews[i];
+        UIView *viewNext = self.arrpaddingViews[i+1];
+
         // 左右编剧都是self.sideSpace.
         // 这里约束不能定scrollView 的contentSize的宽  因为内容还没有填充
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.equalTo(@0);
+            make.height.equalTo(@44);
+//            make.width.greaterThanOrEqualTo(@(self.sideSpace)).priorityLow(10);
+
+            make.width.equalTo(viewNext.mas_width).priorityHigh(1000);
+            if (i == 0) {
+                make.left.equalTo(@0);
+            }
+        }];
         [itme mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.equalTo(@0);
             make.height.equalTo(@44);
-            if (i == 0) {
-                make.left.equalTo(@(self.sideSpace));
-            } else if (i >0) {
-                make.left.equalTo(((UIButton *)self.arrTargerItme[i-1]).mas_right).offset(self.sideSpace);
-            }
+            make.left.equalTo(view.mas_right);
+            make.right.equalTo(viewNext.mas_left);
         }];
-        
-        if (i == self.arrSrcModel.count - 1) {
-            [itme mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.right.equalTo(@(-self.sideSpace));
-            }];
-            // 因为有两种情况
-            // 一 .   菜单比较多,  可以填满整个屏幕的宽度,  每个菜单都以自身宽度为宽度
-            // 二 .    菜单比较少, 比如只有一个 两个,   就不能以自身宽度了,   要以屏幕宽度居中显示.
-            [self.mainScrollView layoutIfNeeded];
-            CGFloat right = itme.frame.size.width+ itme.frame.origin.x +self.sideSpace;  // 最后一个菜单的右边
-            if (right >= self.wight) { //不满屏的情况
-                isFullSceen = YES;
-            }else
-            {
-                [self.mainScrollView insertSubview:self.paddingView atIndex:0];
-                [self.paddingView mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.left.right.top.bottom.equalTo(@0);
-                    make.width.equalTo(@(self.wight));
-                }];
-            }
+    }
+    
+//    UIButton *itme = [self.arrTargerItme lastObject];
+    UIView *view = [self.arrpaddingViews lastObject];
+    [self.mainScrollView insertSubview:self.paddingView atIndex:0];
+    if (!self.isFull) {
+        [self.paddingView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.bottom.equalTo(@0);
+            make.width.equalTo(@(self.wight));
+        }];
+    }else{
+        [self.paddingView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.bottom.equalTo(@0);
+        }];
+    }
+    
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(@0);
+        make.height.equalTo(@44);
+        make.right.equalTo(@0);
+        make.width.greaterThanOrEqualTo(@(self.sideSpace)).priorityLow(10);
+    }];
+    if (self.isFull) {
+        [self.mainScrollView layoutIfNeeded];
+        CGFloat right = view.right ;  // 最后一个菜单的右边
+        if (right < self.wight) {
+            self.isFull = NO;
+            [self addAllSubViews];
+            [self makeItmes];
         }
     }
     
-    // 满屏 每个按钮一样宽
-    if (!isFullSceen) {
-        for (int i = 1; i < self.arrSrcModel.count; i++) {
-            UIButton *button = self.arrTargerItme[i-1];
-            UIButton *buttonNext = self.arrTargerItme[i];
-            [buttonNext mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.width.equalTo(button.mas_width);
-            }];
-        }
-    
-    }
 }
 
 - (void)moveSelectionItme:(UIButton *)button
@@ -197,6 +237,14 @@
     return _arrTargerItme;
 }
 
+- (NSMutableArray *)arrpaddingViews
+{
+    if (!_arrpaddingViews) {
+        _arrpaddingViews = [[NSMutableArray alloc] initWithCapacity:self.arrSrcModel.count];
+    }
+    return _arrpaddingViews;
+}
+
 - (UIScrollView *)mainScrollView
 {
     if (!_mainScrollView) {
@@ -212,10 +260,16 @@
 {
     if (!_paddingView) {
         // 约束填充用的view
-        _paddingView= [[UIView alloc] init];
-        _paddingView.userInteractionEnabled = NO;
+        _paddingView= [self createPaddingView];
     }
     return _paddingView;
+}
+
+- (UIView *)createPaddingView
+{
+    UIView *view= [[UIView alloc] init];
+    view.userInteractionEnabled = NO;
+    return  view;
 }
 
 - (void)setSelectButton:(UIButton *)selectButton

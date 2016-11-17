@@ -32,7 +32,7 @@
 - (void)addNavBackItme
 {
     @weakify(self)
-    [self addNavLeftItmeForTitle:@"返回" block:^(id x) {
+    [self addNavLeftItmeForTitle:nil image:@"back_black" block:^(id x) {
         [self_weak_ backToViewController];
     }];
 }
@@ -52,12 +52,17 @@
     }
 }
 
-- (void)addNavLeftItmeForTitle:(NSString *)title block:(void(^)(id x))block
+- (void)addNavLeftItmeForTitle:(NSString *)title  image:(NSString *)image block:(void(^)(id x))block
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:block];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button setTitle:title forState:0];
+    if (title) {
+        [button setTitle:title forState:0];
+    }
+    if (image){
+        [button setImage:[UIImage imageNamed:image] forState:0];
+    }
     [button sizeToFit];
     UIBarButtonItem *itme = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = itme;

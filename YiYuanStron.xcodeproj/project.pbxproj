@@ -10,6 +10,7 @@
 		1C6200D313E7647ABB0D355E /* libPods-YiYuanStron.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C067514819BF7BDF354F875 /* libPods-YiYuanStron.a */; };
 		6B037E601DD2CF4B0063300C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B037E5F1DD2CF4B0063300C /* RootViewController.m */; };
 		6B037E631DD3096C0063300C /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B037E621DD3096C0063300C /* MainNavigationController.m */; };
+		6B0848D21DDDB1A800C097ED /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0848D11DDDB1A800C097ED /* LoginTextField.m */; };
 		6B1704C91DDAFFFF00C2775B /* UIWebViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704C81DDAFFFF00C2775B /* UIWebViewAdditions.m */; };
 		6B1704D11DDB009B00C2775B /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704CC1DDB009B00C2775B /* MDRadialProgressLabel.m */; };
 		6B1704D21DDB009B00C2775B /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704CE1DDB009B00C2775B /* MDRadialProgressTheme.m */; };
@@ -20,8 +21,10 @@
 		6B1704DF1DDB0EBE00C2775B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1704DE1DDB0EBE00C2775B /* WebViewController.m */; };
 		6B28FB5E1DC8297C00AC4CC4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FB5D1DC8297C00AC4CC4 /* MainViewController.m */; };
 		6B28FB641DC82FB800AC4CC4 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FB631DC82FB800AC4CC4 /* MainTabBarController.m */; };
+		6B2F615F1DDD4504003FE4D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B2F615E1DDD4504003FE4D4 /* Images.xcassets */; };
+		6B2F61661DDD5FA3003FE4D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2F61631DDD5FA3003FE4D4 /* LoginViewController.m */; };
+		6B2F61691DDD5FC8003FE4D4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2F61681DDD5FC8003FE4D4 /* RegisterViewController.m */; };
 		6B504B451DDAB9C100E39F2A /* hyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B504B441DDAB9C100E39F2A /* hyWebView.m */; };
-		6B6F0FA21DC1984C00B80339 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA11DC1984C00B80339 /* LoginViewController.m */; };
 		6B6F0FA51DC1986B00B80339 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA41DC1986B00B80339 /* BasicViewController.m */; };
 		6B6F0FA91DC19C7A00B80339 /* UIView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FA81DC19C7A00B80339 /* UIView+Animations.m */; };
 		6B6F0FAC1DC1A04600B80339 /* AppMagagerSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F0FAB1DC1A04600B80339 /* AppMagagerSingle.m */; };
@@ -31,7 +34,6 @@
 		6BA012B01DD45B6300173536 /* MenuItmeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA012AF1DD45B6300173536 /* MenuItmeModel.m */; };
 		6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D11DC841B90020B051 /* BannerItemModel.m */; };
 		6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D41DC86DE80020B051 /* BannerScrollView.m */; };
-		6BF1E5261DDC66340038A10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF1E5251DDC66340038A10B /* Images.xcassets */; };
 		C7392C681DAE36B600A52D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C671DAE36B600A52D09 /* main.m */; };
 		C7392C6B1DAE36B600A52D09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C6A1DAE36B600A52D09 /* AppDelegate.m */; };
 		C7392C711DAE36B600A52D09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7392C6F1DAE36B600A52D09 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		6B037E5F1DD2CF4B0063300C /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		6B037E611DD3096C0063300C /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		6B037E621DD3096C0063300C /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		6B0848D01DDDB1A800C097ED /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
+		6B0848D11DDDB1A800C097ED /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
 		6B1704C71DDAFFFF00C2775B /* UIWebViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebViewAdditions.h; sourceTree = "<group>"; };
 		6B1704C81DDAFFFF00C2775B /* UIWebViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWebViewAdditions.m; sourceTree = "<group>"; };
 		6B1704CB1DDB009B00C2775B /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
@@ -65,10 +69,13 @@
 		6B28FB5D1DC8297C00AC4CC4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		6B28FB621DC82FB800AC4CC4 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		6B28FB631DC82FB800AC4CC4 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		6B2F615E1DDD4504003FE4D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6B2F61621DDD5FA3003FE4D4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6B2F61631DDD5FA3003FE4D4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		6B2F61671DDD5FC8003FE4D4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		6B2F61681DDD5FC8003FE4D4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		6B504B431DDAB9C100E39F2A /* hyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hyWebView.h; sourceTree = "<group>"; };
 		6B504B441DDAB9C100E39F2A /* hyWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hyWebView.m; sourceTree = "<group>"; };
-		6B6F0FA01DC1984C00B80339 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		6B6F0FA11DC1984C00B80339 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6B6F0FA31DC1986B00B80339 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		6B6F0FA41DC1986B00B80339 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		6B6F0FA71DC19C7A00B80339 /* UIView+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animations.h"; sourceTree = "<group>"; };
@@ -87,7 +94,6 @@
 		6BDE03D11DC841B90020B051 /* BannerItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BannerItemModel.m; path = YiYuanStron/View/BannerScroll/BannerItemModel.m; sourceTree = SOURCE_ROOT; };
 		6BDE03D31DC86DE80020B051 /* BannerItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerItemModel.h; sourceTree = "<group>"; };
 		6BDE03D41DC86DE80020B051 /* BannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerScrollView.m; sourceTree = "<group>"; };
-		6BF1E5251DDC66340038A10B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C067514819BF7BDF354F875 /* libPods-YiYuanStron.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YiYuanStron.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7392C631DAE36B600A52D09 /* YiYuanStron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiYuanStron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7392C671DAE36B600A52D09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -152,6 +158,38 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		6B2F61601DDD5FA3003FE4D4 /* forgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = forgetPassword;
+			sourceTree = "<group>";
+		};
+		6B2F61611DDD5FA3003FE4D4 /* logIn */ = {
+			isa = PBXGroup;
+			children = (
+				6B2F61621DDD5FA3003FE4D4 /* LoginViewController.h */,
+				6B2F61631DDD5FA3003FE4D4 /* LoginViewController.m */,
+			);
+			path = logIn;
+			sourceTree = "<group>";
+		};
+		6B2F61641DDD5FA3003FE4D4 /* register */ = {
+			isa = PBXGroup;
+			children = (
+				6B2F61671DDD5FC8003FE4D4 /* RegisterViewController.h */,
+				6B2F61681DDD5FC8003FE4D4 /* RegisterViewController.m */,
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
+		6B2F61651DDD5FA3003FE4D4 /* storeDelegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = storeDelegate;
+			sourceTree = "<group>";
+		};
 		6B504B411DDAB93F00E39F2A /* web */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,8 +221,12 @@
 		6B6F0F9F1DC1982C00B80339 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				6B6F0FA01DC1984C00B80339 /* LoginViewController.h */,
-				6B6F0FA11DC1984C00B80339 /* LoginViewController.m */,
+				6B2F61601DDD5FA3003FE4D4 /* forgetPassword */,
+				6B2F61611DDD5FA3003FE4D4 /* logIn */,
+				6B2F61641DDD5FA3003FE4D4 /* register */,
+				6B2F61651DDD5FA3003FE4D4 /* storeDelegate */,
+				6B0848D01DDDB1A800C097ED /* LoginTextField.h */,
+				6B0848D11DDDB1A800C097ED /* LoginTextField.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -298,7 +340,7 @@
 				C7392C6A1DAE36B600A52D09 /* AppDelegate.m */,
 				C7392C6F1DAE36B600A52D09 /* Main.storyboard */,
 				C7392C741DAE36B600A52D09 /* LaunchScreen.storyboard */,
-				6BF1E5251DDC66340038A10B /* Images.xcassets */,
+				6B2F615E1DDD4504003FE4D4 /* Images.xcassets */,
 				C7392C661DAE36B600A52D09 /* Supporting Files */,
 			);
 			path = YiYuanStron;
@@ -396,7 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BF1E5261DDC66340038A10B /* Images.xcassets in Resources */,
+				6B2F615F1DDD4504003FE4D4 /* Images.xcassets in Resources */,
 				C7392C761DAE36B600A52D09 /* LaunchScreen.storyboard in Resources */,
 				C7392C711DAE36B600A52D09 /* Main.storyboard in Resources */,
 			);
@@ -474,10 +516,12 @@
 				C7392C6B1DAE36B600A52D09 /* AppDelegate.m in Sources */,
 				6B504B451DDAB9C100E39F2A /* hyWebView.m in Sources */,
 				6B1704D11DDB009B00C2775B /* MDRadialProgressLabel.m in Sources */,
+				6B2F61661DDD5FA3003FE4D4 /* LoginViewController.m in Sources */,
 				6B9E4F8D1DD17C4C0033FC52 /* UIColor+Extern.m in Sources */,
 				6B6F0FA51DC1986B00B80339 /* BasicViewController.m in Sources */,
 				6B1704DC1DDB0C0100C2775B /* UIColor+Expanded.m in Sources */,
 				6B6F0FAC1DC1A04600B80339 /* AppMagagerSingle.m in Sources */,
+				6B2F61691DDD5FC8003FE4D4 /* RegisterViewController.m in Sources */,
 				6B037E631DD3096C0063300C /* MainNavigationController.m in Sources */,
 				C7392C681DAE36B600A52D09 /* main.m in Sources */,
 				6B28FB5E1DC8297C00AC4CC4 /* MainViewController.m in Sources */,
@@ -492,7 +536,7 @@
 				6BA012AD1DD4430C00173536 /* MenuScrollView.m in Sources */,
 				6B037E601DD2CF4B0063300C /* RootViewController.m in Sources */,
 				6B1704DF1DDB0EBE00C2775B /* WebViewController.m in Sources */,
-				6B6F0FA21DC1984C00B80339 /* LoginViewController.m in Sources */,
+				6B0848D21DDDB1A800C097ED /* LoginTextField.m in Sources */,
 				6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */,
 				6BA012B01DD45B6300173536 /* MenuItmeModel.m in Sources */,
 			);
@@ -544,7 +588,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 440;
+				CURRENT_PROJECT_VERSION = 567;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -594,7 +638,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 440;
+				CURRENT_PROJECT_VERSION = 567;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -618,7 +662,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2ABB790F2848138110D9C2DC /* Pods-YiYuanStron.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DV3CMC9R83;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YiYuanStron/PrefixHeader.pch";
 				INFOPLIST_FILE = YiYuanStron/Info.plist;
@@ -633,7 +677,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 694CD81C55C1DC0C7E2A335F /* Pods-YiYuanStron.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DV3CMC9R83;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YiYuanStron/PrefixHeader.pch";
 				INFOPLIST_FILE = YiYuanStron/Info.plist;

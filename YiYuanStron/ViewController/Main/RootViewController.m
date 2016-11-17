@@ -35,11 +35,6 @@
     self.mainController = [[MainViewController alloc] init];
     [self.mainController setNavigtion];
     
-    @weakify(self)
-    [self.mainController addNavLeftItmeForTitle:@"左边" block:^(id x) {
-        [self_weak_ showLeftViewController];
-    }];
-    
     [self addChildViewController:self.mainController.navigationController];
     [self.view addSubview:self.mainController.navigationController.view];
     self.mainController.navigationController.view.frame = self.view.frame;

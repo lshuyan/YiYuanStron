@@ -10,6 +10,8 @@
 #import "BannerScrollView.h"
 #import "MenuScrollView.h"
 #import "WebViewController.h"
+#import "LoginViewController.h"
+#import "RegisterViewController.h"
 
 @interface MainViewController ()
 
@@ -26,6 +28,13 @@
     
     [self addMenuScorllView];
     [self addBannerScrollView];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,7 +87,8 @@
 {
     if (!_menuScrollVIew) {
         _menuScrollVIew = [[MenuScrollView alloc] init];
-        NSArray *arr = @[@"点点滴都滴1", @"江诗丹顿1", @"江诗顿1", @"丹顿1", @"江诗丹顿1", @"江诗丹顿1", @"1江诗丹顿"];
+//        NSArray *arr = @[@"登录", @"注册", @"会员中心", @"个人中心", @"忘记密码",@"百度",@"dddddddddddddd"];
+        NSArray *arr = @[@"登录", @"注册", @"会员中心", @"个人中心", @"忘记密码",@"百度"];
 //        NSArray *arr2= @[@"点点滴都滴", @"江诗丹顿", @"江诗顿", @"丹顿"];
 //        NSArray *arr2 = @[@"点点滴都滴", @"江诗丹顿"];
 
@@ -86,10 +96,49 @@
         for (int i = 0; i < arr.count; i++) {
             MenuItmeModel *model = [[MenuItmeModel alloc] init];
             model.title = arr[i];
+            model.itmeId = i;
             [arrModel addObject:model];
         }
         [_menuScrollVIew makeForItemModels:arrModel callBackBlock:^(MenuItmeModel *model) {
             NSLog(@"%@ --------------------",  model.title);
+            BasicViewController *controller;
+            switch (model.itmeId) {
+                case 0: //登录
+                {
+                    controller = [[LoginViewController alloc] init];
+                    [controller addNavLeftItmeForTitle:nil image:nil block:nil];
+                }
+                    break;
+                case 1://注册
+                {
+                    controller = [[RegisterViewController alloc] init];
+                    [controller addNavBackItme];
+                }
+                    break;
+                case 2://会员中心
+                    
+                    break;
+                case 3://个人中心
+                    
+                    break;
+                case 4://忘记密码
+                    
+                    break;
+                case 5://webview
+                {
+                    controller = [[WebViewController alloc] init];
+                    [controller addNavBackItme];
+                    [((WebViewController *)controller).webView load:@"www.qq.com"];
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+            if (controller) {
+                [self.navigationController pushViewController:controller animated:YES];
+            }
+
             
         }];
         

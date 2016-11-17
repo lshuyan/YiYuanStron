@@ -140,6 +140,7 @@ typedef NS_ENUM(NSInteger, CustomPanDirection) {
 
 - (void)dealloc
 {
+    [self stopTimer];
     _progressProxy.webViewProxyDelegate = nil;
     _webView.delegate = nil;
 }
@@ -413,10 +414,12 @@ typedef NS_ENUM(NSInteger, CustomPanDirection) {
         if([_delegate respondsToSelector:@selector(webPageDidEndLoad:)])
             [_delegate webPageDidEndLoad:self];
         
-        [UIView animateWithDuration:0.25 delay:progress-_progress options:0 animations:^{
-            _viewProgress.alpha = 0.0;
+        [UIView animateWithDuration:0.25 delay:0 options:0 animations:^{
+            if (_viewProgress) {
+                _viewProgress.alpha = 0.0;
+            }
         } completion:nil];
-        
+
         [self hideLoadingCover];
     }
     
