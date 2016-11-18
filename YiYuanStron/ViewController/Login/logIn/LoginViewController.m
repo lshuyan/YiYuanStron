@@ -58,7 +58,7 @@
     [self.userNameField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(25*kSCREEN_6));
         make.right.equalTo(@(-25*kSCREEN_6));
-        make.height.equalTo(@(34));
+        make.height.equalTo(@(40));
         if (isIphoneLess_6) {
             make.top.equalTo(@(208*kSCREEN_6)); //如果是5或者4的设备, 有遮住输入框的可能, 往上了一点点
         }else
@@ -69,7 +69,7 @@
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(25*kSCREEN_6));
         make.right.equalTo(@(-25*kSCREEN_6));
-        make.height.equalTo(@(34));
+        make.height.equalTo(@(40));
         make.top.equalTo(self.userNameField.mas_bottom).offset(18*kSCREEN_6);
     }];
     [self.injoyButton mas_makeConstraints:^(MASConstraintMaker *make) {

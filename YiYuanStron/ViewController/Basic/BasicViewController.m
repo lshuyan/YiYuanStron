@@ -55,7 +55,9 @@
 - (void)addNavLeftItmeForTitle:(NSString *)title  image:(NSString *)image block:(void(^)(id x))block
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:block];
+    if (block) {
+        [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:block];
+    }
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     if (title) {
         [button setTitle:title forState:0];

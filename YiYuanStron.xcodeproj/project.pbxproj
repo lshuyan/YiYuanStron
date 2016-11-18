@@ -32,6 +32,10 @@
 		6B9E4F8D1DD17C4C0033FC52 /* UIColor+Extern.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E4F8C1DD17C4C0033FC52 /* UIColor+Extern.m */; };
 		6BA012AD1DD4430C00173536 /* MenuScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA012AC1DD4430C00173536 /* MenuScrollView.m */; };
 		6BA012B01DD45B6300173536 /* MenuItmeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA012AF1DD45B6300173536 /* MenuItmeModel.m */; };
+		6BBC02071DDEA05100F2DF1E /* UIImage+FitSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC02061DDEA05100F2DF1E /* UIImage+FitSize.m */; };
+		6BBC020A1DDEABEE00F2DF1E /* NSString+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC02091DDEABEE00F2DF1E /* NSString+Ex.m */; };
+		6BBC020E1DDEE41100F2DF1E /* EditPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC020D1DDEE41100F2DF1E /* EditPasswordViewController.m */; };
+		6BCE57351DDEF41700D5E487 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE57341DDEF41700D5E487 /* UserInfoViewController.m */; };
 		6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D11DC841B90020B051 /* BannerItemModel.m */; };
 		6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D41DC86DE80020B051 /* BannerScrollView.m */; };
 		C7392C681DAE36B600A52D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C671DAE36B600A52D09 /* main.m */; };
@@ -90,6 +94,14 @@
 		6BA012AC1DD4430C00173536 /* MenuScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScrollView.m; sourceTree = "<group>"; };
 		6BA012AE1DD45B6300173536 /* MenuItmeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItmeModel.h; sourceTree = "<group>"; };
 		6BA012AF1DD45B6300173536 /* MenuItmeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItmeModel.m; sourceTree = "<group>"; };
+		6BBC02051DDEA05100F2DF1E /* UIImage+FitSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FitSize.h"; sourceTree = "<group>"; };
+		6BBC02061DDEA05100F2DF1E /* UIImage+FitSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FitSize.m"; sourceTree = "<group>"; };
+		6BBC02081DDEABEE00F2DF1E /* NSString+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Ex.h"; sourceTree = "<group>"; };
+		6BBC02091DDEABEE00F2DF1E /* NSString+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Ex.m"; sourceTree = "<group>"; };
+		6BBC020C1DDEE41100F2DF1E /* EditPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPasswordViewController.h; sourceTree = "<group>"; };
+		6BBC020D1DDEE41100F2DF1E /* EditPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPasswordViewController.m; sourceTree = "<group>"; };
+		6BCE57331DDEF41700D5E487 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		6BCE57341DDEF41700D5E487 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		6BDE03D01DC841B90020B051 /* BannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BannerScrollView.h; path = YiYuanStron/View/BannerScroll/BannerScrollView.h; sourceTree = SOURCE_ROOT; };
 		6BDE03D11DC841B90020B051 /* BannerItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BannerItemModel.m; path = YiYuanStron/View/BannerScroll/BannerItemModel.m; sourceTree = SOURCE_ROOT; };
 		6BDE03D31DC86DE80020B051 /* BannerItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerItemModel.h; sourceTree = "<group>"; };
@@ -158,13 +170,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		6B2F61601DDD5FA3003FE4D4 /* forgetPassword */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = forgetPassword;
-			sourceTree = "<group>";
-		};
 		6B2F61611DDD5FA3003FE4D4 /* logIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,12 +195,13 @@
 			path = storeDelegate;
 			sourceTree = "<group>";
 		};
-		6B504B411DDAB93F00E39F2A /* web */ = {
+		6B504B411DDAB93F00E39F2A /* Web */ = {
 			isa = PBXGroup;
 			children = (
 				6B1704DD1DDB0EBE00C2775B /* WebViewController.h */,
 				6B1704DE1DDB0EBE00C2775B /* WebViewController.m */,
 			);
+			name = Web;
 			path = web;
 			sourceTree = "<group>";
 		};
@@ -221,7 +227,7 @@
 		6B6F0F9F1DC1982C00B80339 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				6B2F61601DDD5FA3003FE4D4 /* forgetPassword */,
+				6BBC020B1DDEE3EE00F2DF1E /* edit */,
 				6B2F61611DDD5FA3003FE4D4 /* logIn */,
 				6B2F61641DDD5FA3003FE4D4 /* register */,
 				6B2F61651DDD5FA3003FE4D4 /* storeDelegate */,
@@ -234,6 +240,8 @@
 		6B6F0FA61DC19C5E00B80339 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				6BBC02051DDEA05100F2DF1E /* UIImage+FitSize.h */,
+				6BBC02061DDEA05100F2DF1E /* UIImage+FitSize.m */,
 				6B1704DA1DDB0C0100C2775B /* UIColor+Expanded.h */,
 				6B1704DB1DDB0C0100C2775B /* UIColor+Expanded.m */,
 				6B1704D71DDB0B5400C2775B /* UIImage+Ex.h */,
@@ -246,6 +254,8 @@
 				6B6F0FA81DC19C7A00B80339 /* UIView+Animations.m */,
 				6B9E4F8B1DD17C4C0033FC52 /* UIColor+Extern.h */,
 				6B9E4F8C1DD17C4C0033FC52 /* UIColor+Extern.m */,
+				6BBC02081DDEABEE00F2DF1E /* NSString+Ex.h */,
+				6BBC02091DDEABEE00F2DF1E /* NSString+Ex.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -272,13 +282,23 @@
 			path = MenuScroll;
 			sourceTree = "<group>";
 		};
+		6BBC020B1DDEE3EE00F2DF1E /* edit */ = {
+			isa = PBXGroup;
+			children = (
+				6BBC020C1DDEE41100F2DF1E /* EditPasswordViewController.h */,
+				6BBC020D1DDEE41100F2DF1E /* EditPasswordViewController.m */,
+			);
+			path = edit;
+			sourceTree = "<group>";
+		};
 		6BBFFCDE1DC0B65A00431691 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				6B28FB5B1DC8274E00AC4CC4 /* Main */,
 				6B6F0F9E1DC1982C00B80339 /* Basic */,
 				6B6F0F9F1DC1982C00B80339 /* Login */,
-				6B504B411DDAB93F00E39F2A /* web */,
+				6BCE57311DDEF3C400D5E487 /* UserInfo */,
+				6B504B411DDAB93F00E39F2A /* Web */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -297,6 +317,23 @@
 			children = (
 			);
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		6BCE57311DDEF3C400D5E487 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6BCE57321DDEF40200D5E487 /* UserInfo */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		6BCE57321DDEF40200D5E487 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6BCE57331DDEF41700D5E487 /* UserInfoViewController.h */,
+				6BCE57341DDEF41700D5E487 /* UserInfoViewController.m */,
+			);
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		6BDE03CF1DC8414C0020B051 /* View */ = {
@@ -517,6 +554,7 @@
 				6B504B451DDAB9C100E39F2A /* hyWebView.m in Sources */,
 				6B1704D11DDB009B00C2775B /* MDRadialProgressLabel.m in Sources */,
 				6B2F61661DDD5FA3003FE4D4 /* LoginViewController.m in Sources */,
+				6BBC020A1DDEABEE00F2DF1E /* NSString+Ex.m in Sources */,
 				6B9E4F8D1DD17C4C0033FC52 /* UIColor+Extern.m in Sources */,
 				6B6F0FA51DC1986B00B80339 /* BasicViewController.m in Sources */,
 				6B1704DC1DDB0C0100C2775B /* UIColor+Expanded.m in Sources */,
@@ -526,10 +564,12 @@
 				C7392C681DAE36B600A52D09 /* main.m in Sources */,
 				6B28FB5E1DC8297C00AC4CC4 /* MainViewController.m in Sources */,
 				6B6F0FA91DC19C7A00B80339 /* UIView+Animations.m in Sources */,
+				6BCE57351DDEF41700D5E487 /* UserInfoViewController.m in Sources */,
 				6B1704D91DDB0B5400C2775B /* UIImage+Ex.m in Sources */,
 				6B1704D31DDB009B00C2775B /* MDRadialProgressView.m in Sources */,
 				6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */,
 				6B1704D61DDB017600C2775B /* UIView+Ex.m in Sources */,
+				6BBC020E1DDEE41100F2DF1E /* EditPasswordViewController.m in Sources */,
 				6B28FB641DC82FB800AC4CC4 /* MainTabBarController.m in Sources */,
 				6B1704C91DDAFFFF00C2775B /* UIWebViewAdditions.m in Sources */,
 				6B8724261DD1D6B2009F55AA /* LeftViewController.m in Sources */,
@@ -538,6 +578,7 @@
 				6B1704DF1DDB0EBE00C2775B /* WebViewController.m in Sources */,
 				6B0848D21DDDB1A800C097ED /* LoginTextField.m in Sources */,
 				6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */,
+				6BBC02071DDEA05100F2DF1E /* UIImage+FitSize.m in Sources */,
 				6BA012B01DD45B6300173536 /* MenuItmeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,7 +629,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 567;
+				CURRENT_PROJECT_VERSION = 615;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -638,7 +679,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 567;
+				CURRENT_PROJECT_VERSION = 615;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

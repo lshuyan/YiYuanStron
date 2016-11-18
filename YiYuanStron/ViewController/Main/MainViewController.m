@@ -7,11 +7,15 @@
 //
 
 #import "MainViewController.h"
+
+#import "WebViewController.h"//wbe
+#import "LoginViewController.h"//登录
+#import "RegisterViewController.h"//注册
+#import "EditPasswordViewController.h"//修改
+#import "UserInfoViewController.h"//个人中心
+
 #import "BannerScrollView.h"
 #import "MenuScrollView.h"
-#import "WebViewController.h"
-#import "LoginViewController.h"
-#import "RegisterViewController.h"
 
 @interface MainViewController ()
 
@@ -35,6 +39,13 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.navigationController.view bringSubviewToFront:self.navigationController.navigationBar];
+    [self.view sendSubviewToBack:self.navigationController.navigationBar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,7 +99,7 @@
     if (!_menuScrollVIew) {
         _menuScrollVIew = [[MenuScrollView alloc] init];
 //        NSArray *arr = @[@"登录", @"注册", @"会员中心", @"个人中心", @"忘记密码",@"百度",@"dddddddddddddd"];
-        NSArray *arr = @[@"登录", @"注册", @"会员中心", @"个人中心", @"忘记密码",@"百度"];
+        NSArray *arr = @[@"登录", @"注册", @"忘记密码", @"修改密码", @"会员中心", @"个人中心",@"百度"];
 //        NSArray *arr2= @[@"点点滴都滴", @"江诗丹顿", @"江诗顿", @"丹顿"];
 //        NSArray *arr2 = @[@"点点滴都滴", @"江诗丹顿"];
 
@@ -113,18 +124,32 @@
                 {
                     controller = [[RegisterViewController alloc] init];
                     [controller addNavBackItme];
+                    ((RegisterViewController *)controller).isRegister = YES;
                 }
                     break;
-                case 2://会员中心
-                    
+                case 2://忘记密码
+                {
+                    controller = [[RegisterViewController alloc] init];
+                    [controller addNavBackItme];
+                    ((RegisterViewController *)controller).isRegister = NO;
+                }
                     break;
-                case 3://个人中心
-                    
+                case 3://修改密码
+                {
+                    controller = [[EditPasswordViewController alloc] init];
+                    [controller addNavBackItme];
+                }
                     break;
-                case 4://忘记密码
-                    
+                case 4://会员中心
+
                     break;
-                case 5://webview
+                case 5://个人中心
+                {
+                    controller = [[UserInfoViewController alloc] init];
+                    [controller addNavBackItme];
+                }
+                    break;
+                case 6://WEB
                 {
                     controller = [[WebViewController alloc] init];
                     [controller addNavBackItme];
