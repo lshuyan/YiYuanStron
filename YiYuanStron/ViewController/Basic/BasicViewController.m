@@ -54,6 +54,49 @@
 
 - (void)addNavLeftItmeForTitle:(NSString *)title  image:(NSString *)image block:(void(^)(id x))block
 {
+    UIBarButtonItem *itme = [self createBarButtonItemForTitle:title image:image block:block];
+    self.navigationItem.leftBarButtonItem = itme;
+}
+
+- (void)addNavRightItmeForTitle:(NSString *)title  image:(NSString *)image block:(void(^)(id x))block
+{
+    UIBarButtonItem *itme = [self createBarButtonItemForTitle:title image:image block:block];
+    self.navigationItem.rightBarButtonItem = itme;
+}
+
+- (void)addRightRightItmesForTitles:(NSArray *)titles  images:(NSArray *)images block:(void(^)(id x))block
+{
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    NSInteger a= 0;
+    for (NSString *title in titles) {
+        UIBarButtonItem *itme = [self createBarButtonItemForTitle:title image:nil block:block];
+        itme.customView.tag = a;
+        [arr addObject:itme];
+        a++;
+    }
+    for (NSString *image in images) {
+        UIBarButtonItem *itme = [self createBarButtonItemForTitle:nil image:image block:block];
+        itme.customView.tag = a;
+        [arr addObject:itme];
+        a++;
+    }
+    
+    [self.navigationItem setRightBarButtonItems:arr];
+}
+
+- (void)addNavTitilImage:(NSString *)image
+{
+    UIImageView *view = [[UIImageView alloc] init];
+    view.contentMode = UIViewContentModeCenter;
+    view.image = [UIImage imageNamed:image];
+    [view sizeToFit];
+    self.navigationItem.titleView = view;
+}
+
+#pragma mark ------------- 
+
+- (UIBarButtonItem *)createBarButtonItemForTitle:(NSString *)title  image:(NSString *)image block:(void(^)(id x))block
+{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     if (block) {
         [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:block];
@@ -66,8 +109,9 @@
         [button setImage:[UIImage imageNamed:image] forState:0];
     }
     [button sizeToFit];
+//    button.backgroundColor = [UIColor orangeColor];
     UIBarButtonItem *itme = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = itme;
+    return  itme;
 }
 
 @end

@@ -13,6 +13,7 @@
 #import "RegisterViewController.h"//注册
 #import "EditPasswordViewController.h"//修改
 #import "UserInfoViewController.h"//个人中心
+#import "VipContentViewController.h"//个人中心
 
 #import "BannerScrollView.h"
 #import "MenuScrollView.h"
@@ -28,8 +29,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = kAppTitle;
-    
+//    self.navigationController.view.layer.shadowRadius = 3;
+////    self.navigationController.view.layer.masksToBounds = NO;
+//    self.navigationController.view.layer.shadowOffset = CGSizeMake(-3,0);
+//    self.navigationController.view.layer.shadowColor = [UIColor blackColor].CGColor;
+//    self.navigationController.view.layer.shadowOpacity = .6;//阴影透明度，默认0
+    UIImageView *shadowView = [[UIImageView alloc] init];
+    shadowView.image = [[UIImage imageNamed:@"shadow_left.png"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
+    [self.navigationController.view addSubview:shadowView];
+    [shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(shadowView.superview.mas_left);
+        make.top.bottom.equalTo(@0);
+    }];
+
+    [self addNavItem];
     [self addMenuScorllView];
     [self addBannerScrollView];
     
@@ -50,6 +63,30 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark ------------- private
+
+- (void)addNavItem
+{
+    [self addNavTitilImage:kAppTitleImage];
+    
+    [self addRightRightItmesForTitles:nil images:@[@"home_nav_option", @"home_nav_search"] block:^(UIButton *itme) {
+        if (itme.tag == 0) { //home_nav_option
+            
+        }else if (itme.tag == 1) //home_nav_search
+        {
+            
+        }
+    }];
+    for (UIBarButtonItem *itme in self.navigationItem.rightBarButtonItems) {
+        if (itme.customView.tag == 1) {
+            itme.customView.frame = CGRectMake(0, 0, 45, 44);
+        }
+        if (itme.customView.tag == 0) {
+            itme.customView.frame = CGRectMake(0, 0, 22, 44);
+        }
+    }
 }
 
 - (void)addBannerScrollView
@@ -141,7 +178,10 @@
                 }
                     break;
                 case 4://会员中心
-
+                {
+                    controller = [[VipContentViewController alloc] init];
+                    [controller addNavBackItme];
+                }
                     break;
                 case 5://个人中心
                 {

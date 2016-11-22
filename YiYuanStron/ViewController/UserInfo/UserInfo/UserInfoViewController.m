@@ -109,9 +109,6 @@ static NSString *kAccessoryImageView= @"kAccessoryImageView";
 
 @interface UserInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong)UITableView                       *tableView;
-
-@property(nonatomic, copy)NSMutableArray                    *arrDataSouce;
 
 @end
 
@@ -121,11 +118,11 @@ static NSString *kAccessoryImageView= @"kAccessoryImageView";
     [super viewDidLoad];
     
     self.title = @"个人信息";
+    [self.tableView registerClass:[UserInfoCell class] forCellReuseIdentifier:kUserInfoCellIdentifier];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 
-    [self.view addSubview:self.tableView];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.top.equalTo(@0);
-    }];
     
     self.arrDataSouce = [@[
                            @{
@@ -178,12 +175,17 @@ static NSString *kAccessoryImageView= @"kAccessoryImageView";
     return self.arrDataSouce.count;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIView *view = [UIView new];
-    view.backgroundColor = [UIColor whiteColor];
-    return view;
+    return 58;
 }
+
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    UIView *view = [UIView new];
+//    view.backgroundColor = [UIColor whiteColor];
+//    return view;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -207,21 +209,5 @@ static NSString *kAccessoryImageView= @"kAccessoryImageView";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
-
-
-#pragma mark ------------- set get
-
-- (UITableView *)tableView
-{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        [_tableView registerClass:[UserInfoCell class] forCellReuseIdentifier:kUserInfoCellIdentifier];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
-}
-
 
 @end

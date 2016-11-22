@@ -8,14 +8,13 @@
 
 #import "RootViewController.h"
 #import "MainViewController.h"
-#import "LeftViewController.h"
-#import "MainNavigationController.h"
+//#import "LeftViewController.h"
+#import "VipContentViewController.h"
 
 @interface RootViewController ()
 
-@property (nonatomic, strong)LeftViewController                           *leftViewController;
+@property (nonatomic, strong)VipContentViewController                *leftViewController;
 @property (nonatomic, strong)MainViewController                          *mainController;
-//@property (nonatomic, strong)MainNavigationController                 *mainNvaController;
 
 @property (nonatomic, strong)UIControl                                          *mainMarkConntrol;
 
@@ -30,10 +29,13 @@
 
 - (void)addChildController
 {
-    self.leftViewController = [[LeftViewController alloc] init];
-    self.leftViewController.navigationController.view.frame = CGRectMake(0, 0, kSCREEN_WIGHT*[AppMagagerSingle shareManager].mainContollerLeftScale, kSCREEN_HEIGHT);
+    self.leftViewController = [[VipContentViewController alloc] init];
     self.mainController = [[MainViewController alloc] init];
     [self.mainController setNavigtion];
+    @weakify(self)
+    [self.mainController addNavLeftItmeForTitle:nil image:@"hont_nav_left" block:^(id x) {
+        [self_weak_ showLeftViewController];
+    }];
     
     [self addChildViewController:self.mainController.navigationController];
     [self.view addSubview:self.mainController.navigationController.view];
@@ -51,7 +53,11 @@
     [self addChildViewController:self.leftViewController];
     [self.view insertSubview:self.leftViewController.view atIndex:0];
     [self.mainController.navigationController.view addSubview:self.mainMarkConntrol];
-    
+    [self.leftViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.bottom.equalTo(@0);
+        make.width.equalTo(@(kSCREEN_WIGHT*[AppMagagerSingle shareManager].mainContollerLeftScale));
+    }];
+
     [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         CGPoint point = self.mainController.navigationController.view.center;
         point.x += kSCREEN_WIGHT*[AppMagagerSingle shareManager].mainContollerLeftScale;

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 huyan. All rights reserved.
 //
 
-#import "BasicViewController.h"
+#import "BasicTableViewController.h"
 
-@interface UserInfoViewController : BasicViewController
+@interface UserInfoViewController : BasicTableViewController
 
 @end

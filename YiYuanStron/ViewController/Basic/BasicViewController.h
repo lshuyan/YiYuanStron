@@ -22,5 +22,15 @@
 - (void)addNavBackItme;
 - (void)addNavLeftItmeForTitle:(NSString *)title  image:(NSString *)image block:(void(^)(id x))block;
 
+//返回
 - (void)backToViewController;
+
+//标题
+- (void)addNavTitilImage:(NSString *)image;
+
+- (void)addRightRightItmesForTitles:(NSArray *)titles  images:(NSArray *)images block:(void(^)(id x))block;
+
+// 创建UIBarButtonItem;
+- (UIBarButtonItem *)createBarButtonItemForTitle:(NSString *)title  image:(NSString *)image block:(void(^)(id x))block;
+
 @end

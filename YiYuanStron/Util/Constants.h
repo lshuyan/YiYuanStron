@@ -8,6 +8,7 @@
 
 #pragma mark - Other
 static NSString * const kAppTitle    = @"易源商城";
+static NSString * const kAppTitleImage    = @"home_nav_title";
 static NSString * const kAppStoreLink    = @"";
 
 #if DEBUG

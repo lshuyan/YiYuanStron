@@ -36,6 +36,8 @@
 		6BBC020A1DDEABEE00F2DF1E /* NSString+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC02091DDEABEE00F2DF1E /* NSString+Ex.m */; };
 		6BBC020E1DDEE41100F2DF1E /* EditPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC020D1DDEE41100F2DF1E /* EditPasswordViewController.m */; };
 		6BCE57351DDEF41700D5E487 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE57341DDEF41700D5E487 /* UserInfoViewController.m */; };
+		6BD260DD1DE28D4000B6D93F /* VipContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD260DC1DE28D4000B6D93F /* VipContentViewController.m */; };
+		6BD260E01DE28E2B00B6D93F /* BasicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD260DF1DE28E2B00B6D93F /* BasicTableViewController.m */; };
 		6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D11DC841B90020B051 /* BannerItemModel.m */; };
 		6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D41DC86DE80020B051 /* BannerScrollView.m */; };
 		C7392C681DAE36B600A52D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C671DAE36B600A52D09 /* main.m */; };
@@ -102,6 +104,10 @@
 		6BBC020D1DDEE41100F2DF1E /* EditPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPasswordViewController.m; sourceTree = "<group>"; };
 		6BCE57331DDEF41700D5E487 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		6BCE57341DDEF41700D5E487 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		6BD260DB1DE28D4000B6D93F /* VipContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipContentViewController.h; sourceTree = "<group>"; };
+		6BD260DC1DE28D4000B6D93F /* VipContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipContentViewController.m; sourceTree = "<group>"; };
+		6BD260DE1DE28E2B00B6D93F /* BasicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTableViewController.h; sourceTree = "<group>"; };
+		6BD260DF1DE28E2B00B6D93F /* BasicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTableViewController.m; sourceTree = "<group>"; };
 		6BDE03D01DC841B90020B051 /* BannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BannerScrollView.h; path = YiYuanStron/View/BannerScroll/BannerScrollView.h; sourceTree = SOURCE_ROOT; };
 		6BDE03D11DC841B90020B051 /* BannerItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BannerItemModel.m; path = YiYuanStron/View/BannerScroll/BannerItemModel.m; sourceTree = SOURCE_ROOT; };
 		6BDE03D31DC86DE80020B051 /* BannerItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerItemModel.h; sourceTree = "<group>"; };
@@ -220,6 +226,8 @@
 			children = (
 				6B6F0FA31DC1986B00B80339 /* BasicViewController.h */,
 				6B6F0FA41DC1986B00B80339 /* BasicViewController.m */,
+				6BD260DE1DE28E2B00B6D93F /* BasicTableViewController.h */,
+				6BD260DF1DE28E2B00B6D93F /* BasicTableViewController.m */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 		6BCE57311DDEF3C400D5E487 /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
+				6BD260DA1DE28D2900B6D93F /* VipContent */,
 				6BCE57321DDEF40200D5E487 /* UserInfo */,
 			);
 			path = UserInfo;
@@ -334,6 +343,15 @@
 				6BCE57341DDEF41700D5E487 /* UserInfoViewController.m */,
 			);
 			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		6BD260DA1DE28D2900B6D93F /* VipContent */ = {
+			isa = PBXGroup;
+			children = (
+				6BD260DB1DE28D4000B6D93F /* VipContentViewController.h */,
+				6BD260DC1DE28D4000B6D93F /* VipContentViewController.m */,
+			);
+			path = VipContent;
 			sourceTree = "<group>";
 		};
 		6BDE03CF1DC8414C0020B051 /* View */ = {
@@ -558,6 +576,7 @@
 				6B9E4F8D1DD17C4C0033FC52 /* UIColor+Extern.m in Sources */,
 				6B6F0FA51DC1986B00B80339 /* BasicViewController.m in Sources */,
 				6B1704DC1DDB0C0100C2775B /* UIColor+Expanded.m in Sources */,
+				6BD260E01DE28E2B00B6D93F /* BasicTableViewController.m in Sources */,
 				6B6F0FAC1DC1A04600B80339 /* AppMagagerSingle.m in Sources */,
 				6B2F61691DDD5FC8003FE4D4 /* RegisterViewController.m in Sources */,
 				6B037E631DD3096C0063300C /* MainNavigationController.m in Sources */,
@@ -579,6 +598,7 @@
 				6B0848D21DDDB1A800C097ED /* LoginTextField.m in Sources */,
 				6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */,
 				6BBC02071DDEA05100F2DF1E /* UIImage+FitSize.m in Sources */,
+				6BD260DD1DE28D4000B6D93F /* VipContentViewController.m in Sources */,
 				6BA012B01DD45B6300173536 /* MenuItmeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,7 +649,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 615;
+				CURRENT_PROJECT_VERSION = 707;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -679,7 +699,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 615;
+				CURRENT_PROJECT_VERSION = 707;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

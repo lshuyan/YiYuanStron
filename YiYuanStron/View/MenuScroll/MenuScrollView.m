@@ -7,6 +7,7 @@
 //
 
 #import "MenuScrollView.h"
+#import "UIColor+Extern.h"
 
 @interface MenuScrollView () <UIScrollViewDelegate>
 
@@ -40,12 +41,12 @@
     self = [super init];
     if (self) {
         self.fontSize = 15;
-        self.fontSelectSize = 18;
-        self.fontColour = [UIColor blackColor];
-        self.fontSelectColour = [UIColor redColor];
+        self.fontSelectSize = 16;
+        self.fontColour = COLOR_STRING(@"333333");
+        self.fontSelectColour = COLOR_STRING(@"f39800");
         
         self.wight = kSCREEN_WIGHT;
-        self.sideSpace  = 10;
+        self.sideSpace  = 20;
         [self initUI];
     }
     return self;
