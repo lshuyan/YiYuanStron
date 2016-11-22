@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong)UITableView                       *tableView;
 
-@property(nonatomic, copy)NSMutableArray                    *arrDataSouce;
+@property (nonatomic, strong)NSMutableArray                    *arrDataSouce;
 
 @end

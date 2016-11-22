@@ -7,7 +7,10 @@
 //
 
 #import "BasicViewController.h"
+#import "RootViewController.h"
 
 @interface MainViewController : BasicViewController
+
+@property (nonatomic, weak)RootViewController *rootViewController;
 
 @end

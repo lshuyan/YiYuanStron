@@ -10,4 +10,8 @@
 
 @interface RootViewController : UIViewController
 
+- (void)showLeftViewController;
+- (void)showRightViewController;
+- (void)showMainController;
+
 @end

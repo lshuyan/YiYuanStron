@@ -29,16 +29,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationController.view.layer.shadowRadius = 3;
-////    self.navigationController.view.layer.masksToBounds = NO;
-//    self.navigationController.view.layer.shadowOffset = CGSizeMake(-3,0);
-//    self.navigationController.view.layer.shadowColor = [UIColor blackColor].CGColor;
-//    self.navigationController.view.layer.shadowOpacity = .6;//阴影透明度，默认0
     UIImageView *shadowView = [[UIImageView alloc] init];
     shadowView.image = [[UIImage imageNamed:@"shadow_left.png"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
     [self.navigationController.view addSubview:shadowView];
     [shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(shadowView.superview.mas_left);
+        make.top.bottom.equalTo(@0);
+    }];
+    UIImageView *shadowRightView = [[UIImageView alloc] init];
+    shadowRightView.image = [[UIImage imageNamed:@"shadow_right.png"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
+    [self.navigationController.view addSubview:shadowRightView];
+    [shadowRightView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(shadowRightView.superview.mas_right);
         make.top.bottom.equalTo(@0);
     }];
 
@@ -71,9 +73,14 @@
 {
     [self addNavTitilImage:kAppTitleImage];
     
+    @weakify(self)
+    [self addNavLeftItmeForTitle:nil image:@"hont_nav_left" block:^(id x) {
+        [self_weak_.rootViewController showLeftViewController];
+    }];
+    
     [self addRightRightItmesForTitles:nil images:@[@"home_nav_option", @"home_nav_search"] block:^(UIButton *itme) {
         if (itme.tag == 0) { //home_nav_option
-            
+            [self_weak_.rootViewController showRightViewController];
         }else if (itme.tag == 1) //home_nav_search
         {
             

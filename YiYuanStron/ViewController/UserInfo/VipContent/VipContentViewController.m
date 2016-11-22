@@ -76,11 +76,6 @@ static NSString *kLeftImageView= @"kRightImageView";
 
 - (void)makeTableVIew
 {
-//    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-//    [self.view addSubview:self.tableView];
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.bottom.top.equalTo(@0);
-//    }];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -110,10 +105,7 @@ static NSString *kLeftImageView= @"kRightImageView";
 - (void)addImageBackground
 {
     UIImageView *imageView = [UIImageView new];
-//    imageView.contentMode = UIViewContentModeScaleAspectFill;
-//    stretchableImageWithLeftCapWidth
     imageView.image = [[UIImage imageNamed:@"leftbar_bg.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,1,1344)];
-//    [self.view insertSubview:imageView atIndex:0];
     imageView.image = [[UIImage imageNamed:@"leftbar_bg.png"] stretchableImageWithLeftCapWidth:1 topCapHeight:1344];
     [self.view insertSubview:imageView atIndex:0];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
