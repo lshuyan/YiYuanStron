@@ -14,6 +14,7 @@
 #import "EditPasswordViewController.h"//修改
 #import "UserInfoViewController.h"//个人中心
 #import "VipContentViewController.h"//个人中心
+#import "OrderAgainViewController.h"//确认订单
 
 #import "BannerScrollView.h"
 #import "MenuScrollView.h"
@@ -143,7 +144,7 @@
     if (!_menuScrollVIew) {
         _menuScrollVIew = [[MenuScrollView alloc] init];
 //        NSArray *arr = @[@"登录", @"注册", @"会员中心", @"个人中心", @"忘记密码",@"百度",@"dddddddddddddd"];
-        NSArray *arr = @[@"登录", @"注册", @"忘记密码", @"修改密码", @"会员中心", @"个人中心",@"百度"];
+        NSArray *arr = @[@"登录", @"注册", @"忘记密码", @"修改密码", @"会员中心", @"个人中心", @"百度", @"确认订单", @"百度"];
 //        NSArray *arr2= @[@"点点滴都滴", @"江诗丹顿", @"江诗顿", @"丹顿"];
 //        NSArray *arr2 = @[@"点点滴都滴", @"江诗丹顿"];
 
@@ -201,6 +202,11 @@
                     controller = [[WebViewController alloc] init];
                     [controller addNavBackItme];
                     [((WebViewController *)controller).webView load:@"www.qq.com"];
+                }
+                    break;
+                case 7://WEB
+                {
+                    controller = [[OrderAgainViewController alloc] init];
                 }
                     break;
                     

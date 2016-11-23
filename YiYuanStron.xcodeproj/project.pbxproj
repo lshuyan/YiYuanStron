@@ -44,6 +44,9 @@
 		6BD260E01DE28E2B00B6D93F /* BasicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD260DF1DE28E2B00B6D93F /* BasicTableViewController.m */; };
 		6BDE03D21DC841B90020B051 /* BannerItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D11DC841B90020B051 /* BannerItemModel.m */; };
 		6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE03D41DC86DE80020B051 /* BannerScrollView.m */; };
+		6BE7D4CF1DE52FF800B4B8C7 /* OrderAgainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7D4CE1DE52FF800B4B8C7 /* OrderAgainViewController.m */; };
+		6BE7D4D21DE535C800B4B8C7 /* OrderTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7D4D11DE535C800B4B8C7 /* OrderTableHeadView.m */; };
+		6BE7D4D61DE5369800B4B8C7 /* UserAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7D4D51DE5369800B4B8C7 /* UserAddressView.m */; };
 		C7392C681DAE36B600A52D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C671DAE36B600A52D09 /* main.m */; };
 		C7392C6B1DAE36B600A52D09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7392C6A1DAE36B600A52D09 /* AppDelegate.m */; };
 		C7392C711DAE36B600A52D09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7392C6F1DAE36B600A52D09 /* Main.storyboard */; };
@@ -124,6 +127,12 @@
 		6BDE03D11DC841B90020B051 /* BannerItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BannerItemModel.m; path = YiYuanStron/View/BannerScroll/BannerItemModel.m; sourceTree = SOURCE_ROOT; };
 		6BDE03D31DC86DE80020B051 /* BannerItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerItemModel.h; sourceTree = "<group>"; };
 		6BDE03D41DC86DE80020B051 /* BannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerScrollView.m; sourceTree = "<group>"; };
+		6BE7D4CD1DE52FF800B4B8C7 /* OrderAgainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderAgainViewController.h; sourceTree = "<group>"; };
+		6BE7D4CE1DE52FF800B4B8C7 /* OrderAgainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderAgainViewController.m; sourceTree = "<group>"; };
+		6BE7D4D01DE535C800B4B8C7 /* OrderTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTableHeadView.h; sourceTree = "<group>"; };
+		6BE7D4D11DE535C800B4B8C7 /* OrderTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableHeadView.m; sourceTree = "<group>"; };
+		6BE7D4D41DE5369800B4B8C7 /* UserAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAddressView.h; sourceTree = "<group>"; };
+		6BE7D4D51DE5369800B4B8C7 /* UserAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAddressView.m; sourceTree = "<group>"; };
 		8C067514819BF7BDF354F875 /* libPods-YiYuanStron.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YiYuanStron.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7392C631DAE36B600A52D09 /* YiYuanStron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiYuanStron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7392C671DAE36B600A52D09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -334,6 +343,7 @@
 				6B6F0F9E1DC1982C00B80339 /* Basic */,
 				6B6F0F9F1DC1982C00B80339 /* Login */,
 				6BCE57311DDEF3C400D5E487 /* UserInfo */,
+				6BE7D4CC1DE52FD300B4B8C7 /* Order */,
 				6B504B411DDAB93F00E39F2A /* Web */,
 			);
 			path = ViewController;
@@ -385,11 +395,32 @@
 		6BDE03CF1DC8414C0020B051 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6BE7D4D31DE5366700B4B8C7 /* UserInfo */,
 				6B504B421DDAB97200E39F2A /* webView */,
 				6BA012AA1DD442DF00173536 /* MenuScroll */,
 				6BA012A81DD4425600173536 /* BannerScroll */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6BE7D4CC1DE52FD300B4B8C7 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				6BE7D4CD1DE52FF800B4B8C7 /* OrderAgainViewController.h */,
+				6BE7D4CE1DE52FF800B4B8C7 /* OrderAgainViewController.m */,
+				6BE7D4D01DE535C800B4B8C7 /* OrderTableHeadView.h */,
+				6BE7D4D11DE535C800B4B8C7 /* OrderTableHeadView.m */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		6BE7D4D31DE5366700B4B8C7 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6BE7D4D41DE5369800B4B8C7 /* UserAddressView.h */,
+				6BE7D4D51DE5369800B4B8C7 /* UserAddressView.m */,
+			);
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		C7392C5A1DAE36B600A52D09 = {
@@ -597,6 +628,7 @@
 			files = (
 				6B1704D21DDB009B00C2775B /* MDRadialProgressTheme.m in Sources */,
 				C7392C6B1DAE36B600A52D09 /* AppDelegate.m in Sources */,
+				6BE7D4CF1DE52FF800B4B8C7 /* OrderAgainViewController.m in Sources */,
 				6B504B451DDAB9C100E39F2A /* hyWebView.m in Sources */,
 				6B1704D11DDB009B00C2775B /* MDRadialProgressLabel.m in Sources */,
 				6B2F61661DDD5FA3003FE4D4 /* LoginViewController.m in Sources */,
@@ -615,12 +647,14 @@
 				6B1704D91DDB0B5400C2775B /* UIImage+Ex.m in Sources */,
 				6B18CA091DE3F48100956BF5 /* OptionTableViewCell.m in Sources */,
 				6B1704D31DDB009B00C2775B /* MDRadialProgressView.m in Sources */,
+				6BE7D4D21DE535C800B4B8C7 /* OrderTableHeadView.m in Sources */,
 				6BDE03D51DC86DE80020B051 /* BannerScrollView.m in Sources */,
 				6B1704D61DDB017600C2775B /* UIView+Ex.m in Sources */,
 				6BBC020E1DDEE41100F2DF1E /* EditPasswordViewController.m in Sources */,
 				6B28FB641DC82FB800AC4CC4 /* MainTabBarController.m in Sources */,
 				6B1704C91DDAFFFF00C2775B /* UIWebViewAdditions.m in Sources */,
 				6BA012AD1DD4430C00173536 /* MenuScrollView.m in Sources */,
+				6BE7D4D61DE5369800B4B8C7 /* UserAddressView.m in Sources */,
 				6B18CA0F1DE427F400956BF5 /* OptionModel.m in Sources */,
 				6B037E601DD2CF4B0063300C /* RootViewController.m in Sources */,
 				6B18CA0C1DE3F55000956BF5 /* OptionItme.m in Sources */,
@@ -681,7 +715,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 780;
+				CURRENT_PROJECT_VERSION = 906;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -731,7 +765,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 780;
+				CURRENT_PROJECT_VERSION = 906;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

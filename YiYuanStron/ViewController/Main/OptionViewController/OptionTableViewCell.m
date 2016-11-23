@@ -96,12 +96,12 @@
             make.top.bottom.equalTo(@0);
             make.width.equalTo(@(80 * kSCREEN_6));
             make.height.equalTo(@(26 * kSCREEN_6));
-            if (i%2 == 0) {
+            if (i%3 == 0) {
                 make.left.equalTo(@0);
-            }else if(i%2 == 1)
+            }else if(i%3 == 1)
             {
                 make.centerX.equalTo(@0);
-            }else if(i%2 == 2)
+            }else if(i%3 == 2)
             {
                 make.right.equalTo(@0);
             }
